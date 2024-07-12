@@ -1,40 +1,4 @@
-local EDITOR_NAME = "Panghu's Editor"
-
-local function notify_info(msg)
-  vim.notify(msg, vim.log.levels.INFO, { title = EDITOR_NAME })
-end
-
-local function notify_error(msg)
-  vim.notify(msg, vim.log.levels.ERROR, { title = EDITOR_NAME })
-end
-
-local function git_commit_and_push()
-  -- stderr is redirected to stdout
-  local handle = io.popen("git rev-parse --abbrev-ref HEAD 2>&1")
-  if handle == nil then
-    notify_error("Not a git repository")
-    return
-  end
-
-  local branch = handle:read("*a")
-
-  if branch == nil or string.find(branch, "fatal") then
-    notify_error("Not a git repository")
-    return
-  end
-
-  local commit_msg = vim.fn.input("Commit message: ")
-  -- User cancelled the input
-  if commit_msg == "" then
-    return
-  end
-
-  io.popen("git add . 1>/dev/null 2>&1")
-  io.popen("git commit -m '" .. commit_msg .. "'" .. " 1>/dev/null 2>&1")
-  io.popen("git push origin " .. branch .. " 1>/dev/null 2>&1")
-
-  notify_info("Git commit and push successful")
-end
+local git_tools = require("tools.git")
 
 local map = vim.keymap.set
 
@@ -61,8 +25,8 @@ map("n", "<leader>x", function()
 end, { desc = "Delete buffer" })
 
 -- Undo / Redo in insert mode
-map("i", "<D-z>", "<cmd>u<cr>", { desc = "Undo" })
-map("i", "<D-S-z>", "<cmd>redo<cr>", { desc = "Redo" })
+map("i", "<C-z>", "<cmd>u<cr>", { desc = "Undo" })
+map("i", "<C-r>", "<cmd>redo<cr>", { desc = "Redo" })
 
 -- Code actions
 map("v", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
@@ -77,7 +41,7 @@ map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find Word" })
 -- Git
 map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
 map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Git Status" })
-map("n", "<leader>gp", git_commit_and_push, { desc = "Git commit and push" })
+map("n", "<leader>gp", git_tools.git_commit_and_push, { desc = "Git commit and push" })
 
 -- Windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other Window" })
@@ -109,10 +73,11 @@ map({ "n", "t" }, "<C-/>", function()
 end, { desc = "Terminal new horizontal term" })
 
 -- Comment
-map("n", "<leader>/", "gcc", { desc = "Comment" })
-map("v", "<leader>/", "gc", { desc = "Comment" })
+-- map("n", "<lader>/", "gcc", { desc = "Comment" })
+-- map("v", "<leader>/", "gc", { desc = "Comment" })
 
 -- Save
 map("n", "<C-s>", "<cmd>write<cr>", { desc = "Save" })
 -- Save in insert mode and quit insert mode
 map("i", "<C-s>", "<cmd>write<cr><cmd>stopinsert<cr>", { desc = "Save" })
+
