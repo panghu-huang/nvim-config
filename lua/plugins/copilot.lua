@@ -3,8 +3,8 @@ local plugings = {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     build = ":Copilot auth",
-    config = function ()
-      local NODE18_HOME = os.getenv("NODE20_HOME")
+    config = function()
+      local NODE20_HOME = os.getenv("NODE20_HOME")
 
       require("copilot").setup({
         suggestion = {
@@ -13,7 +13,7 @@ local plugings = {
         panel = {
           enabled = false,
         },
-        copilot_node_command = NODE18_HOME,
+        copilot_node_command = NODE20_HOME,
       })
     end
   },
@@ -28,18 +28,36 @@ local plugings = {
         end,
       },
     },
-    opts = {
-      sources = {
-        { name = "nvim_lsp", group_index = 2 },
-        { name = "copilot",  group_index = 2 },
-        { name = "luasnip",  group_index = 2 },
-        { name = "buffer",   group_index = 2 },
-        { name = "nvim_lua", group_index = 2 },
-        { name = "path",     group_index = 2 },
-      },
-    },
+    opts = function(_, opts)
+      local cmp = require("cmp")
+
+      local overrides = {
+        auto_brackets = {},
+        completion = {
+          completeopt = "menu,menuone,noinsert",
+        },
+        preselect = cmp.PreselectMode.Item,
+        sources = {
+          { name = "nvim_lsp", group_index = 2 },
+          { name = "copilot",  group_index = 2 },
+          { name = "luasnip",  group_index = 2 },
+          { name = "buffer",   group_index = 2 },
+          { name = "nvim_lua", group_index = 2 },
+          { name = "path",     group_index = 2 },
+        },
+      }
+
+      local merged = vim.tbl_deep_extend("force", opts or {}, overrides)
+
+      return merged
+    end,
   },
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup()
+    end,
+  }
 }
 
 return plugings
-

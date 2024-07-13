@@ -25,6 +25,9 @@ return {
     config = function(_, opts)
       local override = {
         on_attach = handle_attach,
+        filters = {
+          dotfiles = false,
+        },
       }
 
       local merged = vim.tbl_extend("force", override, opts)

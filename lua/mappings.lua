@@ -68,8 +68,8 @@ map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
-map("n", "<leader>df", function ()
- vim.diagnostic.open_float()
+map("n", "<leader>df", function()
+  vim.diagnostic.open_float()
 end, { desc = "Open Diagnostic Float" })
 
 -- Terminal
@@ -82,3 +82,19 @@ map("n", "<C-s>", "<cmd>write<cr>", { desc = "Save" })
 -- Save in insert mode and quit insert mode
 map("i", "<C-s>", "<cmd>write<cr><cmd>stopinsert<cr>", { desc = "Save" })
 
+-- Comment
+-- map("n", "<leader>/", function()
+--   local api = require("Comment.api")
+--   local toggle = api.call("toggle.linewise.current", "g@$")
+--   return toggle()
+-- end, { desc = "Comment", expr = true })
+--
+-- map("v", "<leader>/", function()
+--   local api = require("Comment.api")
+--   local toggle = api.call("toggle.linewise", "g@")
+--   return toggle()
+-- end, { desc = "Comment", expr = true })
+
+-- Comment
+map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
+map("v", "<leader>/", "gc", { desc = "Toggle Comment", remap = true })
