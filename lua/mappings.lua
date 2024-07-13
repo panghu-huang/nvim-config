@@ -42,6 +42,7 @@ map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find Word" })
 map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
 map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Git Status" })
 map("n", "<leader>gp", git_tools.git_commit_and_push, { desc = "Git commit and push" })
+map("n", "<leader>gr", git_tools.pull_request_picker, { desc = "Pull Request Picker" })
 
 -- Windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other Window" })
@@ -67,14 +68,14 @@ map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
+map("n", "<leader>df", function ()
+ vim.diagnostic.open_float()
+end, { desc = "Open Diagnostic Float" })
+
 -- Terminal
 map({ "n", "t" }, "<C-/>", function()
   require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
 end, { desc = "Terminal new horizontal term" })
-
--- Comment
--- map("n", "<lader>/", "gcc", { desc = "Comment" })
--- map("v", "<leader>/", "gc", { desc = "Comment" })
 
 -- Save
 map("n", "<C-s>", "<cmd>write<cr>", { desc = "Save" })

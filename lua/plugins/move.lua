@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.move",
-  event = "BufEnter",
+  event = "VeryLazy",
   config = function()
     require("mini.move").setup()
   end,

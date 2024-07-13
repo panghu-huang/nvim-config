@@ -28,8 +28,46 @@ local function git_commit_and_push()
   notify_info("Git commit and push successful")
 end
 
+local function pull_request_picker()
+  local pickers = require("telescope.pickers")
+  local finders = require("telescope.finders")
+
+  pickers.new({}, {
+    prompt_title = "Pull Request Picker",
+    finder = finders.new_table({
+      results = {
+        { "1", "Add feature A" },
+        { "2", "Fix bug B" },
+        { "3", "Refactor C" },
+      },
+      entry_maker = function(entry)
+        return {
+          value = entry,
+          display = entry[2],
+          ordinal = entry[1],
+        }
+      end,
+    }),
+    attach_mappings = function(prompt_bufnr)
+      local actions = require("telescope.actions")
+      local action_state = require("telescope.actions.state")
+
+      actions.select_default:replace(function()
+        local selection = action_state.get_selected_entry()
+
+        print(selection[1])
+
+        actions.close(prompt_bufnr)
+      end)
+
+      return true
+    end,
+  }):find()
+end
+
 local M = {}
 
 M.git_commit_and_push = git_commit_and_push
+M.pull_request_picker = pull_request_picker
 
 return M
