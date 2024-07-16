@@ -8,10 +8,17 @@ local function notify_error(msg)
   vim.notify(msg, vim.log.levels.ERROR, { title = EDITOR_NAME })
 end
 
+local function run_command(cmd)
+  local output = vim.fn.system(cmd)
+
+  return output,vim.v.shell_error
+end
+
 local function git_commit_and_push()
-  local branch_name = vim.fn.system("git rev-parse --abbrev-ref HEAD")
-  if string.find(branch_name, "not a git repository") then
-    notify_error("Not a git repository")
+  local branch_name, code = run_command("git rev-parse --abbrev-ref HEAD")
+
+  if code ~= 0 then
+    notify_error("Failed to get current branch name")
     return
   end
 
@@ -21,9 +28,20 @@ local function git_commit_and_push()
     return
   end
 
-  vim.fn.system("git add .")
-  vim.fn.system("git commit -m '" .. commit_msg .. "'")
-  vim.fn.system("git push origin " .. branch_name)
+  run_command("git add .")
+  local _, commit_exit_code = run_command("git commit -m '" .. commit_msg .. "'")
+
+  if commit_exit_code ~= 0 then
+    notify_error("Failed to commit changes")
+    return
+  end
+
+  local _, push_exit_code = run_command("git push origin " .. branch_name)
+
+  if push_exit_code ~= 0 then
+    notify_error("Failed to push changes")
+    return
+  end
 
   notify_info("Git commit and push successful")
 end
@@ -55,7 +73,7 @@ local function pull_request_picker()
       actions.select_default:replace(function()
         local selection = action_state.get_selected_entry()
 
-        print(selection[1])
+        print(vim.inspect(selection))
 
         actions.close(prompt_bufnr)
       end)

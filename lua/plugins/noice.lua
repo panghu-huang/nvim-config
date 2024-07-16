@@ -38,11 +38,11 @@ return {
           },
           opts = { skip = true }
         },
-        {
-          filter = {
-            find = "No signature help available",
-          },
-        }
+        -- {
+        --   filter = {
+        --     find = "No signature help available",
+        --   },
+        -- }
       }
     })
   end,

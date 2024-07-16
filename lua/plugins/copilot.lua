@@ -23,8 +23,12 @@ local plugings = {
       {
         "zbirenbaum/copilot-cmp",
         dependencies = "copilot.lua",
-        config = function()
-          require("copilot_cmp").setup()
+        config = function(_, opts)
+          local merged = vim.tbl_deep_extend("force", opts, {
+            fix_pairs = true,
+          })
+
+          require("copilot_cmp").setup(merged)
         end,
       },
     },
@@ -47,9 +51,7 @@ local plugings = {
         },
       }
 
-      local merged = vim.tbl_deep_extend("force", opts or {}, overrides)
-
-      return merged
+      return vim.tbl_deep_extend("force", opts or {}, overrides)
     end,
   },
   {

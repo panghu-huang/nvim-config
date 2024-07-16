@@ -16,17 +16,6 @@ return {
             "build/",
             "*.log",
           },
-          vimgrep_arguments = {
-            'rg',
-            '--color=never',
-            '--no-heading',
-            '--with-filename',
-            '--line-number',
-            '--column',
-            '--smart-case',
-            '--ignore-file',
-            '.gitignore'
-          },
           mappings = {
             i = {
               ["<ESC>"] = require("telescope.actions").close

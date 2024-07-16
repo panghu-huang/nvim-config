@@ -1,4 +1,5 @@
 local git_tools = require("tools.git")
+local files = require("tools.files")
 
 local map = vim.keymap.set
 
@@ -33,10 +34,10 @@ map("v", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
 
 -- Files
-map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 map("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find File" })
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open Recent File" })
 map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find Word" })
+map("n", "<leader>fg", files.live_grep_with_glob, { desc = "Find Glob" })
 
 -- Git
 map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
@@ -83,18 +84,11 @@ map("n", "<C-s>", "<cmd>write<cr>", { desc = "Save" })
 map("i", "<C-s>", "<cmd>write<cr><cmd>stopinsert<cr>", { desc = "Save" })
 
 -- Comment
--- map("n", "<leader>/", function()
---   local api = require("Comment.api")
---   local toggle = api.call("toggle.linewise.current", "g@$")
---   return toggle()
--- end, { desc = "Comment", expr = true })
---
--- map("v", "<leader>/", function()
---   local api = require("Comment.api")
---   local toggle = api.call("toggle.linewise", "g@")
---   return toggle()
--- end, { desc = "Comment", expr = true })
-
--- Comment
 map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle Comment", remap = true })
+
+-- Registers
+map("n", "<leader>rr", function ()
+  require('telescope.builtin').registers({layout_config = {width = 0.5}})
+end, { desc = "Registers" })
+

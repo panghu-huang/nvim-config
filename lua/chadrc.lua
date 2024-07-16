@@ -2,7 +2,11 @@
 -- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
 
 ---@type ChadrcConfig
-local M = {}
+local M = {
+  lsp = {
+    signature = false,
+  },
+}
 
 M.ui = {
   theme = "github_dark",
