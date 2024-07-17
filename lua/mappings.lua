@@ -75,8 +75,9 @@ end, { desc = "Open Diagnostic Float" })
 
 -- Terminal
 map({ "n", "t" }, "<C-/>", function()
-  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
+  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm", size = 0.6 }
 end, { desc = "Terminal new horizontal term" })
+map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
 -- Save
 map("n", "<C-s>", "<cmd>write<cr>", { desc = "Save" })
@@ -88,7 +89,10 @@ map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle Comment", remap = true })
 
 -- Registers
-map("n", "<leader>rr", function ()
-  require('telescope.builtin').registers({layout_config = {width = 0.5}})
+map("n", "<leader>rr", function()
+  require('telescope.builtin').registers({ layout_config = { width = 0.5 } })
 end, { desc = "Registers" })
 
+-- New line in normal mode
+map("n", "<A-o>", "o<Esc>", { desc = "New Line" })
+map("n", "<A-O>", "O<Esc>", { desc = "New Line Above" })
