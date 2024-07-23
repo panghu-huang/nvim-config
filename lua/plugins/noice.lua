@@ -38,11 +38,21 @@ return {
           },
           opts = { skip = true }
         },
-        -- {
-        --   filter = {
-        --     find = "No signature help available",
-        --   },
-        -- }
+        {
+          filter = {
+            find = "written",
+          },
+        },
+        {
+          filter = {
+            find = "was properly created",
+          },
+        },
+        {
+          filter = {
+            find = "was properly removed",
+          },
+        }
       }
     })
   end,

@@ -7,12 +7,15 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 
 -- Move
-map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
-map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
-map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
-map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
+map("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
+map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
 
-map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+map("n", "<leader>h", "^", { desc = "Move to beginning of line", remap = true })
+map("n", "<leader>l", "$", { desc = "Move to end of line", remap = true })
+
+map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General clear highlights" })
 
 -- Buffers
 map("n", "<S-h>", function()
@@ -96,3 +99,6 @@ end, { desc = "Registers" })
 -- New line in normal mode
 map("n", "<A-o>", "o<Esc>", { desc = "New Line" })
 map("n", "<A-O>", "O<Esc>", { desc = "New Line Above" })
+
+map("n", "<leader>th", "<cmd>Telescope themes<CR>", { desc = "Themes" })
+

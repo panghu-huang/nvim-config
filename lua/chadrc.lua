@@ -9,7 +9,7 @@ local M = {
 }
 
 M.ui = {
-  theme = "github_dark",
+  theme = "bearded-arc",
   nvdash = {
     load_on_startup = true,
     buttons = {
