@@ -32,7 +32,7 @@ M.ui = {
   },
   statusline = {
     theme = "default",
-    order = { "mode", "file", "git", "%=", "lsp_msg", "diagnostics", "cwd" },
+    order = { "mode", "git", "%=", "lsp_msg", "diagnostics", "cwd" },
   },
   tabufline = {
     order = { "treeOffset", "tabs", "buffers" },

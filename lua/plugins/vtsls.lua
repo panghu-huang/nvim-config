@@ -36,6 +36,9 @@ return {
             pluginPaths = { "." },
           },
         },
+        vtsls = {
+          autoUseWorkspaceTsdk = true,
+        },
       },
     }
   end,
