@@ -11,7 +11,7 @@ end
 local function run_command(cmd)
   local output = vim.fn.system(cmd)
 
-  return output,vim.v.shell_error
+  return output, vim.v.shell_error
 end
 
 local function git_commit_and_push()
@@ -44,6 +44,18 @@ local function git_commit_and_push()
   end
 
   notify_info("Git commit and push successful")
+end
+
+local is_diffview_open = false
+
+local function toggle_diffview()
+  if is_diffview_open then
+    vim.cmd("DiffviewClose")
+  else
+    vim.cmd("DiffviewOpen")
+  end
+
+  is_diffview_open = not is_diffview_open
 end
 
 local function pull_request_picker()
@@ -87,5 +99,6 @@ local M = {}
 
 M.git_commit_and_push = git_commit_and_push
 M.pull_request_picker = pull_request_picker
+M.toggle_diffview = toggle_diffview
 
 return M

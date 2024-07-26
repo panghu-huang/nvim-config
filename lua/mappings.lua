@@ -44,9 +44,9 @@ map("n", "<leader>fg", files.live_grep_with_glob, { desc = "Find Glob" })
 
 -- Git
 map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
-map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Git Status" })
 map("n", "<leader>gp", git_tools.git_commit_and_push, { desc = "Git commit and push" })
 map("n", "<leader>gr", git_tools.pull_request_picker, { desc = "Pull Request Picker" })
+map("n", "<leader>gs", git_tools.toggle_diffview, { desc = "Git Diff" })
 
 -- Windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other Window" })
@@ -101,4 +101,3 @@ map("n", "<A-o>", "o<Esc>", { desc = "New Line" })
 map("n", "<A-O>", "O<Esc>", { desc = "New Line Above" })
 
 map("n", "<leader>th", "<cmd>Telescope themes<CR>", { desc = "Themes" })
-
