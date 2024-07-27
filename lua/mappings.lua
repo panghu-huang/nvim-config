@@ -101,3 +101,6 @@ map("n", "<A-o>", "o<Esc>", { desc = "New Line" })
 map("n", "<A-O>", "O<Esc>", { desc = "New Line Above" })
 
 map("n", "<leader>th", "<cmd>Telescope themes<CR>", { desc = "Themes" })
+
+-- Coding
+map("i", "kk", "<Esc>[mi", { desc = "Move to previous import block" })
