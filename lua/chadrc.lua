@@ -6,10 +6,22 @@ local M = {
   lsp = {
     signature = false,
   },
+  base46 = {
+    theme = "bearded-arc",
+    hl_override = {
+      NvDashAscii = {
+        fg = 'black',
+        bg = 'blue',
+      },
+      NvDashButtons = {
+        fg = 'white',
+        bg = 'black2',
+      },
+    },
+  },
 }
 
 M.ui = {
-  theme = "bearded-arc",
   nvdash = {
     load_on_startup = true,
     buttons = {
