@@ -44,7 +44,15 @@ M.ui = {
   },
   statusline = {
     theme = "default",
-    order = { "mode", "git", "%=", "lsp_msg", "diagnostics", "cwd" },
+    order = { "mode", "git", "%=", "cmd", "recording_msg", "diagnostics", "cwd" },
+    modules = {
+      cmd = function()
+        return "%S"
+      end,
+      recording_msg = function()
+        return require('noice').api.status.mode.get()
+      end,
+    },
   },
   tabufline = {
     order = { "treeOffset", "tabs", "buffers" },

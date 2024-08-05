@@ -3,7 +3,6 @@ return {
   version = "^4", -- Recommended
   ft = { "rust" },
   opts = function()
-    local on_attach = require("nvchad.configs.lspconfig").on_attach
     local on_init = require("nvchad.configs.lspconfig").on_init
     local capabilities = require("nvchad.configs.lspconfig").capabilities
 
@@ -11,7 +10,6 @@ return {
     return {
       server = {
         on_init = on_init,
-        on_attach = on_attach,
         capabilities = capabilities,
         default_settings = {
           -- rust-analyzer language server configuration

@@ -15,14 +15,12 @@ return {
   enabled = true,
   ft = FILETYPES,
   opts = function()
-    local on_attach = require("nvchad.configs.lspconfig").on_attach
     local on_init = require("nvchad.configs.lspconfig").on_init
     local capabilities = require("nvchad.configs.lspconfig").capabilities
 
     ---@class VtslsConfig
     return {
       filetypes = FILETYPES,
-      on_attach = on_attach,
       on_init = on_init,
       capabilities = capabilities,
       single_file_support = true,

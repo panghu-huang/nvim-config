@@ -71,6 +71,7 @@ map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
 map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
+map("n", "<leader>dw", "<cmd>Lspsaga show_workspace_diagnostics ++float<CR>", { desc = "Workspace Diagnostics" })
 
 map("n", "<leader>df", function()
   vim.diagnostic.open_float()
@@ -104,3 +105,10 @@ map("n", "<leader>th", "<cmd>Telescope themes<CR>", { desc = "Themes" })
 
 -- Coding
 map("i", "kk", "<Esc>[mi", { desc = "Move to previous import block" })
+map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Hover Doc" })
+map("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "Code Outline" })
+map("n", "gr", "<cmd>Lspsaga finder<CR>", { desc = "Refernece", noremap = true })
+map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "Goto Definition", noremap = true })
+
+-- Recent Projects
+map("n", "<leader>pp", "<cmd>Telescope projects<CR>", { desc = "Projects" })

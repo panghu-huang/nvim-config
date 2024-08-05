@@ -25,6 +25,7 @@ return {
       },
       messages = {
         enabled = true,
+        view = "mini",
       },
       popupmenu = {
         enabled = true,
@@ -43,16 +44,6 @@ return {
             find = "written",
           },
         },
-        {
-          filter = {
-            find = "was properly created",
-          },
-        },
-        {
-          filter = {
-            find = "was properly removed",
-          },
-        }
       }
     })
   end,
