@@ -1,6 +1,6 @@
 return {
   "mrcjkb/rustaceanvim",
-  version = "^4", -- Recommended
+  version = "^4",
   ft = { "rust" },
   opts = function()
     local on_init = require("nvchad.configs.lspconfig").on_init

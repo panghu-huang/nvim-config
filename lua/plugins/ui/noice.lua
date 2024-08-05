@@ -23,6 +23,10 @@ return {
         inc_rename = false,           -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = false,       -- add a border to hover docs and signature help
       },
+      notify = {
+        enabled = true,
+        view = "mini",
+      },
       messages = {
         enabled = true,
         view = "mini",
@@ -33,15 +37,10 @@ return {
       routes = {
         {
           filter = {
-            event = "msg_show",
-            kind = "",
-            find = "已写入",
-          },
-          opts = { skip = true }
-        },
-        {
-          filter = {
-            find = "written",
+            any = {
+              find = "已写入",
+              find = "written",
+            }
           },
         },
       }

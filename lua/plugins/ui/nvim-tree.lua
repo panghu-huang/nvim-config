@@ -25,12 +25,15 @@ return {
     config = function(_, opts)
       local override = {
         on_attach = handle_attach,
+        view = {
+          width = 40,
+        },
         filters = {
           dotfiles = false,
         },
       }
 
-      local merged = vim.tbl_extend("force", override, opts)
+      local merged = vim.tbl_extend("force", opts, override)
 
       require("nvim-tree").setup(merged)
     end,
