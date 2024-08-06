@@ -111,4 +111,12 @@ map("n", "gr", "<cmd>Lspsaga finder<CR>", { desc = "Refernece", noremap = true }
 map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "Goto Definition", noremap = true })
 
 -- Recent Projects
-map("n", "<leader>pp", "<cmd>Telescope projects<CR>", { desc = "Projects" })
+local has_auto_session_setup = false
+map("n", "<leader>pp", function()
+  if not has_auto_session_setup then
+    require("auto-session").setup_session_lens()
+    has_auto_session_setup = true
+  end
+
+  vim.cmd("Telescope session-lens")
+end, { desc = "Recent Projects" })

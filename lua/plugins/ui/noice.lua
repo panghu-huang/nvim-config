@@ -38,8 +38,8 @@ return {
         {
           filter = {
             any = {
-              find = "已写入",
-              find = "written",
+              { find = "已写入" },
+              { find = "written" },
             }
           },
         },
