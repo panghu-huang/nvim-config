@@ -79,9 +79,18 @@ end, { desc = "Open Diagnostic Float" })
 
 -- Terminal
 map({ "n", "t" }, "<C-/>", function()
-  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm", size = 0.6 }
-end, { desc = "Terminal new horizontal term" })
-map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
+  require("nvchad.term").toggle {
+    pos = "float",
+    id = "term",
+    float_opts = {
+      width = 0.8,
+      height = 0.8,
+      row = 0.1,
+      col = 0.1,
+    }
+  }
+end, { desc = "Toggle terminal" })
+map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal escape terminal mode" })
 
 -- Save
 map("n", "<C-s>", "<cmd>write<cr>", { desc = "Save" })
