@@ -36,6 +36,18 @@ map("i", "<C-r>", "<cmd>redo<cr>", { desc = "Redo" })
 map("v", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
 
+-- Version control
+map("n", "<leader>vu", function()
+  local crates = require("crates")
+
+  crates.update_crate();
+end, { desc = "Update crate version" })
+map("n", "<leader>vp", function()
+  local crates = require("crates")
+
+  crates.show_features_popup();
+end, { desc = "Show features popup" })
+
 -- Files
 map("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find File" })
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open Recent File" })

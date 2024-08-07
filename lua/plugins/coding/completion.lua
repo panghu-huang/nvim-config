@@ -30,6 +30,7 @@ return {
           { name = "buffer",   group_index = 2 },
           { name = "nvim_lua", group_index = 2 },
           { name = "path",     group_index = 2 },
+          { name = "crates",   group_index = 2 },
         },
       }
 
@@ -40,6 +41,23 @@ return {
     "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup()
+    end,
+  },
+  {
+    'saecki/crates.nvim',
+    tag = 'stable',
+    event = 'BufRead Cargo.toml',
+    config = function()
+      require('crates').setup({
+        completion = {
+          cmp = {
+            enabled = true,
+          },
+        },
+        popup = {
+          autofocus = true,
+        },
+      })
     end,
   }
 }
