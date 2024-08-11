@@ -30,6 +30,8 @@ return {
       messages = {
         enabled = true,
         view = "mini",
+        view_warn = "mini",
+        view_error = "mini",
       },
       popupmenu = {
         enabled = true,
@@ -43,7 +45,12 @@ return {
             }
           },
         },
-      }
+      },
+      views = {
+        mini = {
+          timeout = 3000,
+        },
+      },
     })
   end,
 }

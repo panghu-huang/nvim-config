@@ -3,6 +3,7 @@ local files = require("tools.files")
 
 local map = vim.keymap.set
 
+map("n", "<C-z>", function() end, { desc = "Disable suspend" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 
