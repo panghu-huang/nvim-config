@@ -146,3 +146,6 @@ map("n", "<leader>pp", function()
 
   vim.cmd("Telescope session-lens")
 end, { desc = "Recent Projects" })
+
+-- TODO
+map("n", "<leader>td", "<cmd>TodoTelescope<CR>", { desc = "Todo" })
