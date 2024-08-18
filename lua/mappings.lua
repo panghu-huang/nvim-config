@@ -133,6 +133,7 @@ map("i", "<C-w>", "<ESC>lWi", { desc = "Insert at next word start" })
 map("i", "<C-b>", "<ESC>Bi", { desc = "Insert at previous word start" })
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Hover Doc" })
 map("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "Code Outline" })
+map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Actions" })
 map("n", "gr", "<cmd>Lspsaga finder<CR>", { desc = "Refernece", noremap = true })
 map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "Goto Definition", noremap = true })
 

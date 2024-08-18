@@ -49,6 +49,7 @@ return {
     event = 'BufRead Cargo.toml',
     config = function()
       require('crates').setup({
+        enable_update_available_warning = false,
         completion = {
           cmp = {
             enabled = true,
