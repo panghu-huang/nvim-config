@@ -4,7 +4,6 @@ local files = require("tools.files")
 local map = vim.keymap.set
 
 map("n", "<C-z>", "<nop>", { desc = "Disable suspend" })
-map("i", "<C-j>", "<nop>", { desc = "Disable suspend" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 
@@ -22,10 +21,10 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General clear highlights" })
 -- Buffers
 map("n", "<S-h>", function()
   require("nvchad.tabufline").prev()
-end, { desc = "Next Buffer" })
+end, { desc = "Previous Buffer" })
 map("n", "<S-l>", function()
   require("nvchad.tabufline").next()
-end, { desc = "Previous Buffer" })
+end, { desc = "Next Buffer" })
 map("n", "<leader>x", function()
   require("nvchad.tabufline").close_buffer()
 end, { desc = "Delete buffer" })
@@ -140,6 +139,7 @@ map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "Goto Definition", n
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false,
+  silent = true,
 })
 
 -- Recent Projects

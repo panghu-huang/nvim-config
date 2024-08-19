@@ -22,6 +22,20 @@ return {
 
       return vim.tbl_deep_extend("force", opts or {}, overrides)
     end,
+    config = function(_, opts)
+      local cmp = require("cmp")
+      cmp.setup(opts)
+
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' },
+        }, {
+          { name = 'cmdline' }
+        }),
+        matching = { disallow_symbol_nonprefix_matching = true },
+      })
+    end,
   },
   {
     "windwp/nvim-autopairs",
