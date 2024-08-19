@@ -3,7 +3,8 @@ local files = require("tools.files")
 
 local map = vim.keymap.set
 
-map("n", "<C-z>", function() end, { desc = "Disable suspend" })
+map("n", "<C-z>", "<nop>", { desc = "Disable suspend" })
+map("i", "<C-j>", "<nop>", { desc = "Disable suspend" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 
@@ -129,13 +130,17 @@ map("n", "<leader>th", "<cmd>Telescope themes<CR>", { desc = "Themes" })
 map("i", "kk", "<ESC>[mi", { desc = "Move to previous import block" })
 map("i", "<C-h>", "<ESC>I", { desc = "Insert at the beginning of the line" })
 map("i", "<C-l>", "<ESC>A", { desc = "Insert at the end of the line" })
-map("i", "<C-w>", "<ESC>lWi", { desc = "Insert at next word start" })
-map("i", "<C-b>", "<ESC>Bi", { desc = "Insert at previous word start" })
+map("i", "<C-w>", "<ESC>lwi", { desc = "Insert at next word start" })
+map("i", "<C-b>", "<ESC>bi", { desc = "Insert at previous word start" })
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Hover Doc" })
 map("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "Code Outline" })
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Actions" })
+map("n", "<leader>ca", require("actions-preview").code_actions, { desc = "Code Actions" })
 map("n", "gr", "<cmd>Lspsaga finder<CR>", { desc = "Refernece", noremap = true })
 map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "Goto Definition", noremap = true })
+map("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false,
+})
 
 -- Recent Projects
 local has_auto_session_setup = false

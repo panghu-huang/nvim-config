@@ -1,19 +1,6 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        dependencies = "copilot.lua",
-        config = function(_, opts)
-          local merged = vim.tbl_deep_extend("force", opts, {
-            fix_pairs = true,
-          })
-
-          require("copilot_cmp").setup(merged)
-        end,
-      },
-    },
     opts = function(_, opts)
       local cmp = require("cmp")
 
@@ -25,7 +12,6 @@ return {
         preselect = cmp.PreselectMode.Item,
         sources = {
           { name = "nvim_lsp", group_index = 2 },
-          { name = "copilot",  group_index = 2 },
           { name = "luasnip",  group_index = 2 },
           { name = "buffer",   group_index = 2 },
           { name = "nvim_lua", group_index = 2 },

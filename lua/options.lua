@@ -11,3 +11,6 @@ o.tabstop = 2
 -- Show command in statusline
 o.showcmdloc = 'statusline'
 o.showcmd = true
+
+-- For copilot.nvim
+vim.g.copilot_no_tab_map = true
