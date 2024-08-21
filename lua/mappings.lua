@@ -28,6 +28,9 @@ end, { desc = "Next Buffer" })
 map("n", "<leader>x", function()
   require("nvchad.tabufline").close_buffer()
 end, { desc = "Delete buffer" })
+map("n", "<leader>ba", function()
+  require("nvchad.tabufline").closeAllBufs()
+end, { desc = "Close all buffers" })
 
 -- Undo / Redo in insert mode
 map("i", "<C-z>", "<cmd>u<cr>", { desc = "Undo" })
@@ -36,6 +39,12 @@ map("i", "<C-r>", "<cmd>redo<cr>", { desc = "Redo" })
 -- Code actions
 map("v", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
+
+-- Copilot Chat
+map({ "n", "v" }, "<leader>cct", "<cmd>CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat" })
+map({ "n", "v" }, "<leader>ccd", "<cmd>CopilotChatDocs<CR>", { desc = "Copilot Chat Docs" })
+map({ "n", "v" }, "<leader>ccr", "<cmd>CopilotChatTests<CR>", { desc = "Copilot Chat Tests" })
+map({ "n", "v" }, "<leader>cco", "<cmd>CopilotChatOptimize<CR>", { desc = "Copilot Chat Optimize" })
 
 -- Version control
 map("n", "<leader>vu", function()
@@ -107,8 +116,8 @@ map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal escape terminal mode" })
 
 -- Save
 map("n", "<C-s>", "<cmd>write<cr>", { desc = "Save" })
--- Save in insert mode and quit insert mode
-map("i", "<C-s>", "<cmd>write<cr><cmd>stopinsert<cr>", { desc = "Save" })
+-- Save and quit insert mode or visual mode
+map({ "i", "v" }, "<C-s>", "<cmd>write<cr><cmd>stopinsert<cr>", { desc = "Save" })
 
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
