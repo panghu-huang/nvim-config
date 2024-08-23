@@ -41,9 +41,10 @@ map("v", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
 
 -- Copilot Chat
-map({ "n", "v" }, "<leader>cct", "<cmd>CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat" })
+map({ "n", "v" }, "<leader>ccc", "<cmd>CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat" })
 map({ "n", "v" }, "<leader>ccd", "<cmd>CopilotChatDocs<CR>", { desc = "Copilot Chat Docs" })
-map({ "n", "v" }, "<leader>ccr", "<cmd>CopilotChatTests<CR>", { desc = "Copilot Chat Tests" })
+map({ "n", "v" }, "<leader>cct", "<cmd>CopilotChatTests<CR>", { desc = "Copilot Chat Tests" })
+map({ "n", "v" }, "<leader>ccr", "<cmd>CopilotChatReset<CR>", { desc = "Copilot Chat Reset" })
 map({ "n", "v" }, "<leader>cco", "<cmd>CopilotChatOptimize<CR>", { desc = "Copilot Chat Optimize" })
 
 -- Version control

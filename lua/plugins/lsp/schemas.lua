@@ -1,6 +1,7 @@
 return {
   "b0o/schemastore.nvim",
   event = "VeryLazy",
+  ft = { "json", "yaml" },
   config = function()
     local lspconfig = require("lspconfig")
 
