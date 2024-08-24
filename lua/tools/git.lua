@@ -1,11 +1,9 @@
-local EDITOR_NAME = "Panghu's Editor"
-
 local function notify_info(msg)
-  vim.notify(msg, vim.log.levels.INFO, { title = EDITOR_NAME })
+  vim.notify(msg, vim.log.levels.INFO)
 end
 
 local function notify_error(msg)
-  vim.notify(msg, vim.log.levels.ERROR, { title = EDITOR_NAME })
+  vim.notify(msg, vim.log.levels.ERROR)
 end
 
 local function run_command(cmd)

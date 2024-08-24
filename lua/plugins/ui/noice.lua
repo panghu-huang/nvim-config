@@ -11,9 +11,21 @@ return {
         progress = {
           enabled = false,
         },
+        hover = {
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
+        },
+        message = {
+          view = "mini",
+        },
+      },
+      health = {
+        checker = false,
       },
       presets = {
-        bottom_search = true,
+        -- bottom_search = true,
         command_palette = true,
         long_message_to_split = true,
         inc_rename = false,
