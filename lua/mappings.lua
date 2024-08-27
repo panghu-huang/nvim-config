@@ -143,7 +143,7 @@ map("i", "<C-w>", "<ESC>lwi", { desc = "Insert at next word start" })
 map("i", "<C-b>", "<ESC>bi", { desc = "Insert at previous word start" })
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Hover Doc" })
 map("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "Code Outline" })
-map({ "n", "v" }, "<leader>ca", require("actions-preview").code_actions, { desc = "Code Actions" })
+map({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Actions" })
 map("n", "gr", "<cmd>Lspsaga finder<CR>", { desc = "Refernece", noremap = true })
 map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "Goto Definition", noremap = true })
 map("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
@@ -153,15 +153,7 @@ map("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
 })
 
 -- Recent Projects
-local has_auto_session_setup = false
-map("n", "<leader>pp", function()
-  if not has_auto_session_setup then
-    require("auto-session").setup_session_lens()
-    has_auto_session_setup = true
-  end
-
-  vim.cmd("Telescope session-lens")
-end, { desc = "Recent Projects" })
+map("n", "<leader>pp", "<cmd>SessionSearch<CR>", { desc = "Recent Projects" })
 
 -- TODO
 map("n", "<leader>td", "<cmd>TodoTelescope<CR>", { desc = "Todo" })
