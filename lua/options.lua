@@ -4,7 +4,7 @@ local g = vim.g
 o.laststatus = 3
 o.showmode = false
 
-o.cursorlineopt = "both"
+o.cursorlineopt = 'both'
 o.cursorline = true
 
 o.autoindent = true
@@ -18,7 +18,7 @@ o.softtabstop = 2
 o.ignorecase = true
 o.smartcase = true
 
-o.clipboard = "unnamedplus"
+o.clipboard = 'unnamedplus'
 
 -- Numbers
 o.number = true
@@ -32,8 +32,8 @@ o.undofile = true
 g.rust_recommended_style = 0
 
 -- Add binaries installed by mason.nvim to path
-local is_windows = vim.fn.has("win32") ~= 0
-local sep = is_windows and "\\" or "/"
-local delim = is_windows and ";" or ":"
+local is_windows = vim.fn.has 'win32' ~= 0
+local sep = is_windows and '\\' or '/'
+local delim = is_windows and ';' or ':'
 
-vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, sep) .. delim .. vim.env.PATH
+vim.env.PATH = table.concat({ vim.fn.stdpath 'data', 'mason', 'bin' }, sep) .. delim .. vim.env.PATH
