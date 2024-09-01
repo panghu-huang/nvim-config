@@ -1,4 +1,3 @@
--- vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 vim.g.mapleader = ' '
 
 require('tools.lazy-nvim').setup {
@@ -12,8 +11,11 @@ require('tools.lazy-nvim').setup {
 
 vim.cmd [[ colorscheme tokyonight ]]
 
+require('theme').setup()
+
 require 'options'
 
 vim.schedule(function()
   require 'mappings'
+  require 'autocmds'
 end)

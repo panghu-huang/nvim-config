@@ -1,3 +1,47 @@
+local lspkind = {
+  Namespace = '󰌗',
+  Text = '󰉿',
+  Method = '󰆧',
+  Function = '󰆧',
+  Constructor = '',
+  Field = '󰜢',
+  Variable = '󰀫',
+  Class = '󰠱',
+  Interface = '',
+  Module = '',
+  Property = '󰜢',
+  Unit = '󰑭',
+  Value = '󰎠',
+  Enum = '',
+  Keyword = '󰌋',
+  Snippet = '',
+  Color = '󰏘',
+  File = '󰈚',
+  Reference = '󰈇',
+  Folder = '󰉋',
+  EnumMember = '',
+  Constant = '󰏿',
+  Struct = '󰙅',
+  Event = '',
+  Operator = '󰆕',
+  TypeParameter = '󰊄',
+  Table = '',
+  Object = '󰅩',
+  Tag = '',
+  Array = '[]',
+  Boolean = '',
+  Number = '',
+  Null = '󰟢',
+  Supermaven = '',
+  String = '󰉿',
+  Calendar = '',
+  Watch = '󰥔',
+  Package = '',
+  Copilot = '',
+  Codeium = '',
+  TabNine = '',
+}
+
 return {
   {
     'hrsh7th/nvim-cmp',
@@ -33,9 +77,35 @@ return {
           end,
         },
 
+        formatting = {
+          fields = { 'kind', 'abbr', 'menu' },
+          format = function(_, item)
+            local icon = lspkind[item.kind] or ''
+
+            item.menu = item.kind
+            item.kind = ' ' .. icon .. ' '
+
+            return item
+          end,
+        },
+        window = {
+          completion = {
+            -- border = border 'CmpBorder',
+            side_padding = 0,
+            col_offset = -3,
+            scrollbar = false,
+            winhighlight = 'Normal:CmpPmenu,CursorLine:CmpSel,Search:None',
+          },
+          documentation = {
+            -- border = border 'CmpDocBorder',
+            col_offset = 0,
+            side_padding = 0,
+            winhighlight = 'Normal:CmpDoc',
+          },
+        },
         mapping = {
-          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-u>'] = cmp.mapping.scroll_docs(4),
+          ['<C-d>'] = cmp.mapping.scroll_docs(4),
+          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.close(),
 

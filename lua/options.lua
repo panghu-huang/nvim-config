@@ -1,5 +1,6 @@
 local o = vim.o
 local g = vim.g
+local opt = vim.opt
 
 o.laststatus = 3
 o.showmode = false
@@ -27,7 +28,10 @@ o.numberwidth = 2
 o.ruler = false
 
 o.undofile = true
--- o.formatoptions:remove({ "r", "o" })
+
+-- disable nvim intro
+opt.shortmess:append 'WF'
+opt.termguicolors = true
 
 g.rust_recommended_style = 0
 

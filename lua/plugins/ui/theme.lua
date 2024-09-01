@@ -6,9 +6,7 @@ return {
     opts = {},
   },
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {},
-    event = 'UIEnter',
+    'oneslash/helix-nvim',
+    -- lazy = false,
   },
 }
