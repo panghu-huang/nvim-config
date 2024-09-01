@@ -6,6 +6,7 @@ require('tools.lazy-nvim').setup {
     { import = 'plugins.ui' },
     { import = 'plugins.coding' },
     { import = 'plugins.lsp' },
+    { import = 'plugins.treesitter' },
   },
 }
 

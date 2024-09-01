@@ -1,6 +1,6 @@
 return {
   'folke/which-key.nvim',
-  keys = { '<leader>' },
+  keys = { '<leader>', '[', ']' },
   opts = {
     preset = 'helix',
     spec = {
@@ -13,18 +13,7 @@ return {
       { '<leader>g', group = 'Git' },
       { '<leader>t', group = 'Theme' },
       { '<leader>v', group = 'Version control' },
-    },
-    win = {
-      width = { min = 46, max = 80 },
-      height = { min = 2, max = 0.5 },
-      col = 1,
-      title = true,
-      title_pos = 'left',
-    },
-    layout = {
-      width = { min = 50 },
-      spacing = 2,
-      align = 'left',
+      { '<leader>z', group = 'Lazy' },
     },
     icons = {
       rules = false,

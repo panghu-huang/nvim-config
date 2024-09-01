@@ -6,7 +6,7 @@ return {
 
     local opts = {
       defaults = {
-        prompt_prefix = '   ',
+        prompt_prefix = ' 🔍 ',
         selection_caret = ' ',
         entry_prefix = ' ',
         sorting_strategy = 'ascending',
