@@ -1,5 +1,25 @@
 vim.g.mapleader = ' '
 
+require('ui').setup {
+  header = {
+    ' ███████████                                █████                ',
+    '░░███░░░░░███                              ░░███                 ',
+    ' ░███    ░███  ██████   ████████    ███████ ░███████   █████ ████',
+    ' ░██████████  ░░░░░███ ░░███░░███  ███░░███ ░███░░███ ░░███ ░███ ',
+    ' ░███░░░░░░    ███████  ░███ ░███ ░███ ░███ ░███ ░███  ░███ ░███ ',
+    ' ░███         ███░░███  ░███ ░███ ░███ ░███ ░███ ░███  ░███ ░███ ',
+    ' █████       ░░████████ ████ █████░░███████ ████ █████ ░░████████',
+    '░░░░░         ░░░░░░░░ ░░░░ ░░░░░  ░░░░░███░░░░ ░░░░░   ░░░░░░░░ ',
+    '                                   ███ ░███                      ',
+    '                                  ░░██████                       ',
+    '                                   ░░░░░░                        ',
+  },
+  buttons = {
+    { '  Find File', '<leader><space>', 'Telescope find_files' },
+    { '󰈚  Recent Files', 'Spc f o', 'Telescope oldfiles' },
+  },
+}
+
 require('tools.lazy-nvim').setup {
   colorscheme = 'tokyonight',
   plugins = {
@@ -10,13 +30,11 @@ require('tools.lazy-nvim').setup {
   },
 }
 
-vim.cmd [[ colorscheme tokyonight ]]
-
-require('theme').setup()
-
 require 'options'
+require 'autocmds'
+
+vim.cmd [[ colorscheme tokyonight ]]
 
 vim.schedule(function()
   require 'mappings'
-  require 'autocmds'
 end)

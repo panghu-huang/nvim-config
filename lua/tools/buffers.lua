@@ -38,7 +38,7 @@ function M.del_buf(buf)
       vim.api.nvim_win_set_buf(win, new_buf)
 
       -- Create dashboard instance instead of empty buffer
-      require('dashboard'):instance()
+      require('ui').draw_dashboard()
     end)
   end
 

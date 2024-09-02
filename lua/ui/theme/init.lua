@@ -1,6 +1,14 @@
-local cmp_highlight = require 'theme.cmp'
+local cmp_highlight = require 'ui.theme.cmp'
 
 local default_highlights = {
+  DashboardAscii = {
+    fg = 'black',
+    bg = '#67b0e8',
+  },
+  DashboardButtons = {
+    fg = 'white',
+    bg = '#1f2427',
+  },
   Popup = {
     bg = '#17182c',
     fg = '#a6a6b5',

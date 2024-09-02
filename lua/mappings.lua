@@ -51,6 +51,7 @@ map('n', '<leader>zz', '<cmd>Lazy<CR>', { desc = 'Open Lazy panel' })
 -- Bufferline
 map('n', '<S-h>', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Previous buffer' })
 map('n', '<S-l>', '<cmd>BufferLineCycleNext<CR>', { desc = 'Next buffer' })
+map('n', '<leader>bo', '<cmd>BufferLineCloseOthers<CR>', { desc = 'Close all other visible buffers' })
 map('n', '<leader>x', function()
   local buffer_tools = require 'tools.buffers'
   local buf = vim.api.nvim_get_current_buf()
@@ -67,4 +68,35 @@ map('n', '<leader>fw', '<cmd>Telescope live_grep<cr>', { desc = 'Find Word' })
 map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'Git Commits' })
 map('n', '<leader>gp', git_tools.git_commit_and_push, { desc = 'Git commit and push' })
 map('n', '<leader>gr', git_tools.pull_request_picker, { desc = 'Pull Request Picker' })
-map('n', '<leader>gs', git_tools.toggle_diffview, { desc = 'Git Diff' })
+
+-- Diagnostic
+local diagnostic_goto = function(next, severity)
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go { severity = severity }
+  end
+end
+
+map('n', ']d', diagnostic_goto(true), { desc = 'Next Diagnostic' })
+map('n', '[d', diagnostic_goto(false), { desc = 'Prev Diagnostic' })
+map('n', ']e', diagnostic_goto(true, 'ERROR'), { desc = 'Next Error' })
+map('n', '[e', diagnostic_goto(false, 'ERROR'), { desc = 'Prev Error' })
+map('n', ']w', diagnostic_goto(true, 'WARN'), { desc = 'Next Warning' })
+map('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
+map('n', '<leader>df', vim.diagnostic.open_float, { desc = 'Open Diagnostic Float' })
+
+-- Registers
+map('n', '<leader>rr', function()
+  require('telescope.builtin').registers { layout_config = { width = 0.5 } }
+end, { desc = 'Registers' })
+
+map('i', '<C-j>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false,
+  silent = true,
+})
+
+-- Code actions
+-- map('v', '<leader>cr', vim.lsp.buf.rename, { desc = 'Rename' })
+map('n', '<leader>cf', vim.lsp.buf.format, { desc = 'Format' })

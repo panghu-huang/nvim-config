@@ -44,61 +44,48 @@ local function git_commit_and_push()
   notify_info 'Git commit and push successful'
 end
 
-local is_diffview_open = false
-
-local function toggle_diffview()
-  if is_diffview_open then
-    vim.cmd 'DiffviewClose'
-  else
-    vim.cmd 'DiffviewOpen'
-  end
-
-  is_diffview_open = not is_diffview_open
-end
-
 local function pull_request_picker()
   local pickers = require 'telescope.pickers'
   local finders = require 'telescope.finders'
 
   pickers
-    .new({}, {
-      prompt_title = 'Pull Request Picker',
-      finder = finders.new_table {
-        results = {
-          { '1', 'Add feature A' },
-          { '2', 'Fix bug B' },
-          { '3', 'Refactor C' },
+      .new({}, {
+        prompt_title = 'Pull Request Picker',
+        finder = finders.new_table {
+          results = {
+            { '1', 'Add feature A' },
+            { '2', 'Fix bug B' },
+            { '3', 'Refactor C' },
+          },
+          entry_maker = function(entry)
+            return {
+              value = entry,
+              display = entry[2],
+              ordinal = entry[1],
+            }
+          end,
         },
-        entry_maker = function(entry)
-          return {
-            value = entry,
-            display = entry[2],
-            ordinal = entry[1],
-          }
+        attach_mappings = function(prompt_bufnr)
+          local actions = require 'telescope.actions'
+          local action_state = require 'telescope.actions.state'
+
+          actions.select_default:replace(function()
+            local selection = action_state.get_selected_entry()
+
+            print(vim.inspect(selection))
+
+            actions.close(prompt_bufnr)
+          end)
+
+          return true
         end,
-      },
-      attach_mappings = function(prompt_bufnr)
-        local actions = require 'telescope.actions'
-        local action_state = require 'telescope.actions.state'
-
-        actions.select_default:replace(function()
-          local selection = action_state.get_selected_entry()
-
-          print(vim.inspect(selection))
-
-          actions.close(prompt_bufnr)
-        end)
-
-        return true
-      end,
-    })
-    :find()
+      })
+      :find()
 end
 
 local M = {}
 
 M.git_commit_and_push = git_commit_and_push
 M.pull_request_picker = pull_request_picker
-M.toggle_diffview = toggle_diffview
 
 return M

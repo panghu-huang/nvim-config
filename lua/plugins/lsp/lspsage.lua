@@ -11,6 +11,12 @@ return {
         quit_in_show = { 'q', '<ESC>' },
       },
     },
+    rename = {
+      keys = {
+        quit = '<ESC>',
+        exec = '<CR>',
+      },
+    },
     lightbulb = {
       enable = false,
     },

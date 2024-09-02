@@ -1,6 +1,4 @@
-local o = vim.o
-local g = vim.g
-local opt = vim.opt
+local o, opt = vim.o, vim.opt
 
 o.laststatus = 3
 o.showmode = false
@@ -29,11 +27,11 @@ o.ruler = false
 
 o.undofile = true
 
--- disable nvim intro
-opt.shortmess:append 'WF'
-opt.termguicolors = true
+-- Show command in statusline
+o.showcmdloc = 'statusline'
+o.showcmd = true
 
-g.rust_recommended_style = 0
+opt.termguicolors = true
 
 -- Add binaries installed by mason.nvim to path
 local is_windows = vim.fn.has 'win32' ~= 0
