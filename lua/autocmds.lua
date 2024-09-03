@@ -22,7 +22,14 @@ autocmd('LspAttach', {
 
 autocmd('VimEnter', {
   callback = function()
-    require('ui').draw_dashboard()
+    local x = vim.diagnostic.severity
+
+    vim.diagnostic.config {
+      virtual_text = { prefix = "" },
+      signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
+      underline = true,
+      float = { border = "single" },
+    }
   end,
 })
 

@@ -1,5 +1,12 @@
 return {
   'folke/todo-comments.nvim',
-  event = 'UIEnter',
+  event = 'VeryLazy',
+  keys = {
+    {
+      "<leader>td",
+      "<cmd>TodoTelescope<CR>",
+      desc = "Search Todos",
+    }
+  },
   opts = {},
 }

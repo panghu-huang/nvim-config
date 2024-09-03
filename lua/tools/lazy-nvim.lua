@@ -8,7 +8,7 @@ local function clone_lazy_nvim_if_not_exists()
     if vim.v.shell_error ~= 0 then
       vim.api.nvim_echo({
         { 'Failed to clone lazy.nvim:\n', 'ErrorMsg' },
-        { out, 'WarningMsg' },
+        { out,                            'WarningMsg' },
         { '\nPress any key to exit...' },
       }, true, {})
 
@@ -69,6 +69,8 @@ local function setup(opts)
   }
 
   require('lazy').setup(config)
+
+  vim.cmd('colorscheme ' .. opts.colorscheme)
 end
 
 local M = {}

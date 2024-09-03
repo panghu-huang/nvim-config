@@ -25,6 +25,8 @@ o.relativenumber = true
 o.numberwidth = 2
 o.ruler = false
 
+o.signcolumn = 'yes'
+
 o.undofile = true
 
 -- Show command in statusline

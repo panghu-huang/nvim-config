@@ -107,6 +107,6 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
-    event = 'UIEnter',
+    event = 'VeryLazy',
   },
 }

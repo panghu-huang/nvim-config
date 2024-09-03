@@ -11,28 +11,32 @@ return {
   'yioneko/nvim-vtsls',
   dependencies = {
     'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp',
   },
   ft = FILETYPES,
-  opts = {
-    filetypes = FILETYPES,
-    single_file_support = true,
-    settings = {
-      typescript = {
-        suggest = {
-          completionFunctionCalls = true,
+  opts = function()
+    local capabilities = require 'cmp_nvim_lsp'.default_capabilities()
+
+    return {
+      filetypes = FILETYPES,
+      single_file_support = true,
+      capabilities = capabilities,
+      settings = {
+        typescript = {
+          suggest = {
+            completionFunctionCalls = true,
+          },
+          inlayHints = false,
+          tsserver = {
+            pluginPaths = { '.' },
+          },
         },
-        inlayHints = false,
-        tsserver = {
-          pluginPaths = { '.' },
+        vtsls = {
+          autoUseWorkspaceTsdk = true,
         },
       },
-      vtsls = {
-        autoUseWorkspaceTsdk = true,
-      },
-    },
-  },
-  ---@param _ any
-  ---@param opts VtslsConfig
+    }
+  end,
   config = function(_, opts)
     require('lspconfig.configs').vtsls = require('vtsls').lspconfig
 

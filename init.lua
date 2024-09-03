@@ -17,6 +17,7 @@ require('ui').setup {
   buttons = {
     { '  Find File', '<leader><space>', 'Telescope find_files' },
     { '󰈚  Recent Files', 'Spc f o', 'Telescope oldfiles' },
+    { ' Restore session', 'Spc s r', 'SessionRestore' },
   },
 }
 
@@ -27,13 +28,12 @@ require('tools.lazy-nvim').setup {
     { import = 'plugins.coding' },
     { import = 'plugins.lsp' },
     { import = 'plugins.treesitter' },
+    { import = 'plugins.session' },
   },
 }
 
 require 'options'
 require 'autocmds'
-
-vim.cmd [[ colorscheme tokyonight ]]
 
 vim.schedule(function()
   require 'mappings'

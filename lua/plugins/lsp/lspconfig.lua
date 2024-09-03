@@ -1,15 +1,17 @@
 return {
   'neovim/nvim-lspconfig',
   event = 'UIEnter',
+  dependencies = {
+    'hrsh7th/cmp-nvim-lsp',
+  },
   config = function()
     local lspconfig = require 'lspconfig'
+    local capabilities = require 'cmp_nvim_lsp'.default_capabilities()
 
     lspconfig.html.setup {}
 
     lspconfig.lua_ls.setup {
-      on_attach = function() end,
-      on_init = function() end,
-
+      capabilities = capabilities,
       settings = {
         Lua = {
           diagnostics = {

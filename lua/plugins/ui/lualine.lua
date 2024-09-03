@@ -26,6 +26,8 @@ return {
       lualine_z = {
         {
           'diagnostics',
+          sources = { 'nvim_lsp', 'nvim_workspace_diagnostic', 'nvim_diagnostic' },
+          colored = false,
           symbols = {
             error = 'E',
             warn = 'W',

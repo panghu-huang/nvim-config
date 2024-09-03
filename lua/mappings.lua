@@ -1,4 +1,5 @@
 local git_tools = require 'tools.git'
+local file_tools = require 'tools.files'
 local map = vim.keymap.set
 
 map('n', '<C-z>', '<nop>', { desc = 'Disable suspend' })
@@ -48,7 +49,7 @@ map('v', '<leader>/', 'gc', { desc = 'Toggle Comment', remap = true })
 -- Lazy
 map('n', '<leader>zz', '<cmd>Lazy<CR>', { desc = 'Open Lazy panel' })
 
--- Bufferline
+-- Buffer
 map('n', '<S-h>', '<cmd>BufferLineCyclePrev<CR>', { desc = 'Previous buffer' })
 map('n', '<S-l>', '<cmd>BufferLineCycleNext<CR>', { desc = 'Next buffer' })
 map('n', '<leader>bo', '<cmd>BufferLineCloseOthers<CR>', { desc = 'Close all other visible buffers' })
@@ -59,10 +60,15 @@ map('n', '<leader>x', function()
   buffer_tools.del_buf(buf)
 end, { desc = 'Delete current buffer' })
 
+-- Tab
+map('n', '<C-Left>', '<cmd>tabp<CR>', { desc = 'Previous tab' })
+map('n', '<C-Right>', '<cmd>tabn<CR>', { desc = 'Next tab' })
+
 -- Files
 map('n', '<leader><space>', '<cmd>Telescope find_files<cr>', { desc = 'Find File' })
 map('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', { desc = 'Open Recent File' })
 map('n', '<leader>fw', '<cmd>Telescope live_grep<cr>', { desc = 'Find Word' })
+map("n", "<leader>fg", file_tools.live_grep_with_glob, { desc = "Find Glob" })
 
 -- Git
 map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'Git Commits' })

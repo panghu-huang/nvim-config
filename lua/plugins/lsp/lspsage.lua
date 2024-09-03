@@ -25,6 +25,7 @@ return {
     },
     outline = {
       layout = 'float',
+      detail = false,
     },
   },
 }
