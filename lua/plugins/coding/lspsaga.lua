@@ -7,7 +7,7 @@ return {
       keys = {
         exec_action = 'e',
         quit = 'q',
-        toggle_or_jump = 'o',
+        toggle_or_jump = { 'o', 'l' },
         quit_in_show = { 'q', '<ESC>' },
       },
     },
@@ -25,6 +25,7 @@ return {
     },
     outline = {
       layout = 'float',
+      toggle_or_jump = { 'o', 'l' },
       detail = false,
     },
   },

@@ -104,5 +104,10 @@ map('i', '<C-j>', 'copilot#Accept("\\<CR>")', {
 })
 
 -- Code actions
--- map('v', '<leader>cr', vim.lsp.buf.rename, { desc = 'Rename' })
 map('n', '<leader>cf', vim.lsp.buf.format, { desc = 'Format' })
+
+-- Theme
+map('n', '<leader>mt', function()
+  local telescope = require 'telescope.builtin'
+  telescope.colorscheme { enable_preview = true }
+end, { desc = 'Toggle Theme' })

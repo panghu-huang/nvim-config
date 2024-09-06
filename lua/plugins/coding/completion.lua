@@ -227,20 +227,15 @@ return {
             return commom_format(entry, vim_item)
           end,
         },
-        experimental = {
-          -- ghost_text = true,
-        },
         window = {
           completion = {
             side_padding = 0,
             col_offset = -3,
             scrollbar = false,
-            winhighlight = 'Normal:Popup,CursorLine:SelectedLine,Search:None',
           },
           documentation = {
             col_offset = 0,
             side_padding = 0,
-            winhighlight = 'Normal:CmpDoc',
           },
         },
         mapping = {

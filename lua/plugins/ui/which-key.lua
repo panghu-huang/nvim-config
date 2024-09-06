@@ -13,6 +13,7 @@ return {
       { '<leader>r', group = 'Registers' },
       { '<leader>g', group = 'Git' },
       { '<leader>t', group = 'Terminal & Task & TODO' },
+      { '<leader>m', group = 'Theme' },
       { '<leader>v', group = 'Version control' },
       { '<leader>z', group = 'Lazy' },
       { '<leader>s', group = 'Sessions' },

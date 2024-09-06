@@ -16,7 +16,7 @@ return {
     }
   },
   opts = {
-    start_in_insert = false,
+    start_in_insert = true,
     float_opts = {
       title_pos = 'center',
     },
