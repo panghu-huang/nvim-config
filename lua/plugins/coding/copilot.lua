@@ -1,17 +1,33 @@
 return {
+  -- {
+  --   'github/copilot.vim',
+  --   event = 'InsertEnter',
+  --   init = function()
+  --     vim.g.copilot_no_tab_map = true
+  --     vim.g.copilot_enabled = true
+  --
+  --     local node20 = os.getenv('NODE20_HOME')
+  --
+  --     if node20 ~= nil then
+  --       vim.g.copilot_node_command = node20
+  --     end
+  --   end,
+  -- },
   {
-    'github/copilot.vim',
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
     event = 'InsertEnter',
-    init = function()
-      vim.g.copilot_no_tab_map = true
-      vim.g.copilot_enabled = true
-
-      local node20 = os.getenv('NODE20_HOME')
-
-      if node20 ~= nil then
-        vim.g.copilot_node_command = node20
-      end
-    end,
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = '<C-j>',
+          next = '<C-]>',
+          prev = '<C-[>',
+        },
+      }
+    },
   },
   {
     'CopilotC-Nvim/CopilotChat.nvim',

@@ -12,6 +12,7 @@ return {
       },
     },
     rename = {
+      in_select = false,
       keys = {
         quit = '<ESC>',
         exec = '<CR>',
