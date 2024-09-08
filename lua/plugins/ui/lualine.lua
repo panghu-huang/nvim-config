@@ -13,6 +13,7 @@ return {
   event = 'UIEnter',
   opts = {
     options = {
+      theme = 'catppuccin',
       globalstatus = true,
     },
     sections = {

@@ -13,7 +13,6 @@ autocmd('LspAttach', {
     map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { desc = 'Hover Doc' })
     map('n', '<leader>co', '<cmd>Lspsaga outline<CR>', { desc = 'Code Outline' })
     map({ 'n', 'v' }, '<leader>ca', '<cmd>Lspsaga code_action<CR>', { desc = 'Code Actions' })
-    -- map({ 'n', 'v' }, '<leader>cr', vim.lsp.buf.rename, { desc = 'Rename' })
     map({ 'n', 'v' }, '<leader>cr', '<cmd>Lspsaga rename<CR>', { desc = 'Rename' })
     map('n', 'gr', '<cmd>Lspsaga finder<CR>', { desc = 'Refernece', noremap = true })
     map('n', 'gd', '<cmd>Lspsaga goto_definition<CR>', { desc = 'Goto Definition', noremap = true })

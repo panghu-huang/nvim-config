@@ -67,6 +67,7 @@ local function setup(opts)
       },
     },
   }
+  vim.g.colorscheme = opts.colorscheme
 
   require('lazy').setup(config)
 

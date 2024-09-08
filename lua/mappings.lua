@@ -32,8 +32,11 @@ map('n', '<C-s>', '<cmd>write<cr>', { desc = 'Save' })
 map({ 'i', 'v' }, '<C-s>', '<cmd>write<cr><cmd>stopinsert<cr>', { desc = 'Save' })
 
 -- New line in normal mode
-map('n', '<A-o>', 'o<Esc>', { desc = 'New Line' })
-map('n', '<A-O>', 'O<Esc>', { desc = 'New Line Above' })
+map('n', '<A-o>', 'o<Esc>', { desc = 'New Line', silent = true })
+map('n', '<A-O>', 'O<Esc>', { desc = 'New Line Above', silent = true })
+-- New line in insert mode
+map('i', '<A-o>', '<Esc>o', { desc = 'New Line', silent = true })
+map('i', '<A-O>', '<Esc>O', { desc = 'New Line Above', silent = true })
 
 -- Coding
 map('i', 'kk', '<ESC>[mi', { desc = 'Move to previous import block' })
