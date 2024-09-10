@@ -35,6 +35,9 @@ return {
             ['<ESC>'] = require('telescope.actions').close,
           },
         },
+        preview = {
+          filesize_limit = 0.1, -- in MB
+        }
       },
     }
 

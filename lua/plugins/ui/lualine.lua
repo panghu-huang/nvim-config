@@ -23,8 +23,6 @@ return {
       lualine_x = { '%S' },
       lualine_y = {
         recording_msg,
-      },
-      lualine_z = {
         {
           'diagnostics',
           sources = { 'nvim_lsp', 'nvim_workspace_diagnostic', 'nvim_diagnostic' },
@@ -35,6 +33,13 @@ return {
             info = 'I',
             hint = 'H',
           },
+        },
+      },
+      lualine_z = {
+        'location',
+        {
+          'progress',
+          color = { gui = 'bold' },
         },
       },
     },

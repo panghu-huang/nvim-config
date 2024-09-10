@@ -41,6 +41,15 @@ return {
       view = {
         width = 40,
         preserve_window_proportions = true,
+        float = {
+          enable = true,
+          open_win_config = {
+            width = 100,
+            height = vim.o.lines - 10,
+            col = (vim.o.columns - 100) / 2,
+            row = 3,
+          },
+        }
       },
       renderer = {
         highlight_git = true,

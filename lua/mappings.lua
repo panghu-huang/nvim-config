@@ -97,14 +97,16 @@ map('n', '<leader>df', vim.diagnostic.open_float, { desc = 'Open Diagnostic Floa
 
 -- Registers
 map('n', '<leader>rr', function()
-  require('telescope.builtin').registers { layout_config = { width = 0.5 } }
+  require('telescope.builtin').registers {
+    layout_config = { width = 0.5 },
+  }
 end, { desc = 'Registers' })
 
--- map('i', '<C-j>', 'copilot#Accept("\\<CR>")', {
---   expr = true,
---   replace_keycodes = false,
---   silent = true,
--- })
+map('i', '<C-j>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false,
+  silent = true,
+})
 
 -- Code actions
 map('n', '<leader>cf', vim.lsp.buf.format, { desc = 'Format' })
