@@ -10,7 +10,7 @@ return {
       { '<leader>k', group = 'Copilot Chat',          mode = { 'n', 'v' } },
       { '<leader>w', group = 'Windows' },
       { '<leader>f', group = 'Files' },
-      { '<leader>r', group = 'Registers' },
+      { '<leader>r', group = 'Registers & Requests' },
       { '<leader>g', group = 'Git' },
       { '<leader>t', group = 'Terminal & Task & TODO' },
       { '<leader>m', group = 'Theme' },

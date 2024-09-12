@@ -35,6 +35,12 @@ o.showcmd = true
 
 opt.termguicolors = true
 
+vim.filetype.add({
+  extension = {
+    ['http'] = 'http'
+  }
+})
+
 -- Add binaries installed by mason.nvim to path
 local is_windows = vim.fn.has 'win32' ~= 0
 local sep = is_windows and '\\' or '/'
