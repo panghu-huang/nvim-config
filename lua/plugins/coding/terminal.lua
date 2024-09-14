@@ -7,12 +7,6 @@ return {
       "<cmd>ToggleTerm direction=float name=Terminal<CR>",
       desc = "Toggle terminal",
       mode = { "n", "t" }
-    },
-    {
-      "<leader>tb",
-      "<cmd>ToggleTerm direction=tab name=Terminal<CR>",
-      desc = "Toggle terminal",
-      mode = { "n", "t" }
     }
   },
   opts = {

@@ -39,7 +39,7 @@ return {
             goto_next_start = {
               [']f'] = { query = '@function.outer', desc = 'Next Function start' },
               [']c'] = { query = '@call.outer', desc = 'Next Call start' },
-              [']s'] = { query = '@statement.outer', desc = 'Next Statement start' },
+              [']s'] = { query = '@assignment.outer', desc = 'Next Assignment start' },
               [']b'] = { query = '@block.outer', desc = 'Next Block start' },
               [']a'] = { query = '@parameter.outer', desc = 'Next Argument start' },
               [']l'] = { query = '@loop.outer', desc = 'Next Loop start' },
@@ -49,7 +49,7 @@ return {
             goto_previous_start = {
               ['[f'] = { query = '@function.outer', desc = 'Previous Function start' },
               ['[c'] = { query = '@call.outer', desc = 'Previous Call start' },
-              ['[s'] = { query = '@statement.outer', desc = 'Previous Statement start' },
+              ['[s'] = { query = '@assignment.outer', desc = 'Previous Assignment start' },
               ['[b'] = { query = '@block.outer', desc = 'Previous Block start' },
               ['[a'] = { query = '@parameter.outer', desc = 'Previous Argument start' },
               ['[l'] = { query = '@loop.outer', desc = 'Previous Loop start' },
@@ -59,7 +59,7 @@ return {
             goto_next_end = {
               [']F'] = { query = '@function.outer', desc = 'Next Function end' },
               [']C'] = { query = '@call.outer', desc = 'Next Call end' },
-              [']S'] = { query = '@statement.outer', desc = 'Next Statement end' },
+              [']S'] = { query = '@assignment.outer', desc = 'Next Assignment end' },
               [']B'] = { query = '@block.outer', desc = 'Next Block end' },
               [']A'] = { query = '@parameter.outer', desc = 'Next Argument end' },
               [']L'] = { query = '@loop.outer', desc = 'Next Loop end' },
@@ -69,7 +69,7 @@ return {
             goto_previous_end = {
               ['[F'] = { query = '@function.outer', desc = 'Previous Function end' },
               ['[C'] = { query = '@call.outer', desc = 'Previous Call end' },
-              ['[S'] = { query = '@statement.outer', desc = 'Previous Statement end' },
+              ['[S'] = { query = '@assignment.outer', desc = 'Previous Assignment end' },
               ['[B'] = { query = '@block.outer', desc = 'Previous Block end' },
               ['[A'] = { query = '@parameter.outer', desc = 'Previous Argument end' },
               ['[L'] = { query = '@loop.outer', desc = 'Previous Loop end' },
@@ -82,7 +82,7 @@ return {
             keymaps = {
               ['af'] = '@function.outer',
               ['ac'] = '@call.outer',
-              ['as'] = '@statement.outer',
+              ['as'] = '@assignment.outer',
               ['ab'] = '@block.outer',
               ['aa'] = '@parameter.outer',
               ['al'] = '@loop.outer',
@@ -91,7 +91,7 @@ return {
               -- inner
               ['if'] = '@function.inner',
               ['ic'] = '@call.inner',
-              ['is'] = '@statement.inner',
+              ['is'] = '@assignment.rhs',
               ['ib'] = '@block.inner',
               ['ia'] = '@parameter.inner',
               ['il'] = '@loop.inner',
