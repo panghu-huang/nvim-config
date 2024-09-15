@@ -8,7 +8,9 @@ return {
     local lspconfig = require 'lspconfig'
     local capabilities = require 'cmp_nvim_lsp'.default_capabilities()
 
-    lspconfig.html.setup {}
+    lspconfig.html.setup {
+      capabilities = capabilities,
+    }
 
     lspconfig.lua_ls.setup {
       capabilities = capabilities,
@@ -21,7 +23,6 @@ return {
             library = {
               vim.fn.expand '$VIMRUNTIME/lua',
               vim.fn.expand '$VIMRUNTIME/lua/vim/lsp',
-              -- vim.fn.stdpath("data") .. "/lazy/ui/nvchad_types",
               vim.fn.stdpath 'data' .. '/lazy/lazy.nvim/lua/lazy',
             },
             maxPreload = 100000,

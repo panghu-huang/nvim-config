@@ -74,8 +74,6 @@ map("n", "<leader>fg", file_tools.live_grep_with_glob, { desc = "Find Glob" })
 
 -- Git
 map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'Git Commits' })
--- map('n', '<leader>gp', git_tools.git_commit_and_push, { desc = 'Git commit and push' })
--- map('n', '<leader>gr', git_tools.pull_request_picker, { desc = 'Pull Request Picker' })
 
 -- Diagnostic
 local diagnostic_goto = function(next, severity)
@@ -104,9 +102,3 @@ end, { desc = 'Registers' })
 
 -- Code actions
 map('n', '<leader>cf', vim.lsp.buf.format, { desc = 'Format' })
-
--- Theme
-map('n', '<leader>mt', function()
-  local telescope = require 'telescope.builtin'
-  telescope.colorscheme { enable_preview = true }
-end, { desc = 'Toggle Theme' })

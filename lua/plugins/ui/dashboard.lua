@@ -1,6 +1,6 @@
 return {
   'nvimdev/dashboard-nvim',
-  event = 'VimEnter',
+  event = 'UIEnter',
   opts = function()
     local header = {
       ' ███████████                                █████                ',

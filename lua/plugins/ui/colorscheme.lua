@@ -1,28 +1,62 @@
 return {
   {
     'folke/tokyonight.nvim',
-    lazy = vim.g.colorscheme ~= 'tokyonight',
-    priority = 1000,
     opts = {},
   },
   {
     'oneslash/helix-nvim',
-    lazy = vim.g.colorscheme ~= 'helix',
-    -- lazy = false,
   },
   {
     'catppuccin/nvim',
-    lazy = vim.g.colorscheme ~= 'catppuccin',
-    priority = 1000,
   },
   {
     'rmehri01/onenord.nvim',
-    lazy = vim.g.colorscheme ~= 'onenord',
-    priority = 1000,
   },
   {
-    'oxfist/night-owl.nvim',
-    lazy = vim.g.colorscheme ~= 'night-owl',
-    priority = 1000,
+    'zaldih/themery.nvim',
+    keys = {
+      {
+        '<leader>mt',
+        '<cmd>Themery<CR>',
+        desc = 'Toogle Theme switcher',
+      }
+    },
+    lazy = false,
+    opts = {
+      themes = {
+        {
+          name = 'Tokyo Night (Night)',
+          colorscheme = 'tokyonight-night',
+        },
+        {
+          name = 'Tokyo Night (Storm)',
+          colorscheme = 'tokyonight-storm',
+        },
+        {
+          name = 'Tokyo Night (Moon)',
+          colorscheme = 'tokyonight-moon',
+        },
+        {
+          name = 'catppuccin (Frappe)',
+          colorscheme = 'catppuccin-frappe',
+        },
+        {
+          name = 'catppuccin (Macchiato)',
+          colorscheme = 'catppuccin-macchiato',
+        },
+        {
+          name = 'catppuccin (Mocha)',
+          colorscheme = 'catppuccin-mocha',
+        },
+        {
+          name = 'helix',
+          colorscheme = 'helix',
+        },
+        {
+          name = 'onenord',
+          colorscheme = 'onenord',
+        }
+      }
+    },
   }
 }

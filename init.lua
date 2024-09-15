@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 
 require('tools.lazy-nvim').setup {
-  colorscheme = 'catppuccin',
+  -- colorscheme = 'catppuccin',
   plugins = {
     { import = 'plugins.ui' },
     { import = 'plugins.coding' },

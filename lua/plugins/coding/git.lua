@@ -6,11 +6,6 @@ return {
       '<leader>gg',
       '<cmd>Neogit<cr>',
       desc = 'Neogit'
-    },
-    {
-      '<leader>gp',
-      '<cmd>Neogit commit<cr>',
-      desc = 'Neogit commit'
     }
   },
   opts = {
@@ -23,6 +18,10 @@ return {
         ["<C-s>"] = "Submit",
         ["<C-c>"] = "Abort",
       },
+    },
+    integrations = {
+      telescope = true,
+      diffview = true,
     }
   }
 }
