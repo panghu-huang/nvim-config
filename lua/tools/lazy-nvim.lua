@@ -67,11 +67,8 @@ local function setup(opts)
       },
     },
   }
-  -- vim.g.colorscheme = opts.colorscheme
 
   require('lazy').setup(config)
-
-  -- vim.cmd('colorscheme ' .. opts.colorscheme)
 end
 
 local M = {}

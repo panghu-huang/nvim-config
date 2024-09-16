@@ -1,16 +1,18 @@
 return {
   {
     'folke/tokyonight.nvim',
-    opts = {},
-  },
-  {
-    'oneslash/helix-nvim',
   },
   {
     'catppuccin/nvim',
   },
   {
     'rmehri01/onenord.nvim',
+  },
+  {
+    'navarasu/onedark.nvim',
+  },
+  {
+    'projekt0n/github-nvim-theme',
   },
   {
     'zaldih/themery.nvim',
@@ -49,12 +51,70 @@ return {
           colorscheme = 'catppuccin-mocha',
         },
         {
-          name = 'helix',
-          colorscheme = 'helix',
+          name = 'One Dark (Dark)',
+          colorscheme = 'onedark',
+          before = [[
+            vim.g.onedark_config = {
+              style = 'dark'
+            }
+          ]],
         },
         {
-          name = 'onenord',
+          name = 'One Dark (Darker)',
+          colorscheme = 'onedark',
+          before = [[
+            vim.g.onedark_config = {
+              style = 'darker'
+            }
+          ]],
+        },
+        {
+          name = 'One Dark (Cool)',
+          colorscheme = 'onedark',
+          before = [[
+            vim.g.onedark_config = {
+              style = 'cool'
+            }
+          ]],
+        },
+        {
+          name = 'One Dark (Deep)',
+          colorscheme = 'onedark',
+          before = [[
+            vim.g.onedark_config = {
+              style = 'deep'
+            }
+          ]],
+        },
+        {
+          name = 'One Dark (Warm)',
+          colorscheme = 'onedark',
+          before = [[
+            vim.g.onedark_config = {
+              style = 'warm'
+            }
+          ]],
+        },
+        {
+          name = 'One Dark (Warmer)',
+          colorscheme = 'onedark',
+          before = [[
+            vim.g.onedark_config = {
+              style = 'warmer'
+            }
+          ]],
+        },
+        {
+          name = 'One Nord',
           colorscheme = 'onenord',
+        },
+        {
+          name = 'GitHub (Dark)',
+          colorscheme = 'github_dark',
+        },
+        {
+          name = 'GitHub (Dark Dimmed)',
+          colorscheme = 'github_dark_dimmed',
         }
       }
     },

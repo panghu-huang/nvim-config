@@ -1,4 +1,5 @@
 local file_tools = require 'tools.files'
+local git_tools = require 'tools.git'
 local map = vim.keymap.set
 
 map('n', '<C-z>', '<nop>', { desc = 'Disable suspend' })
@@ -74,6 +75,7 @@ map("n", "<leader>fg", file_tools.live_grep_with_glob, { desc = "Find Glob" })
 
 -- Git
 map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'Git Commits' })
+map('n', '<leader>gp', git_tools.git_commit_and_push, { desc = 'Git Commit and Push' })
 
 -- Diagnostic
 local diagnostic_goto = function(next, severity)
