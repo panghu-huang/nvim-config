@@ -13,5 +13,8 @@ return {
       desc = 'Stage Git Hunk',
     }
   },
-  opts = {},
+  opts = {
+    -- Disable the default keybindings
+    on_attach = function() end,
+  },
 }
