@@ -11,12 +11,14 @@ autocmd('LspAttach', {
     end
 
     map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { desc = 'Hover Doc' })
-    map('n', '<leader>co', '<cmd>Lspsaga outline<CR>', { desc = 'Code Outline' })
     map({ 'n', 'v' }, '<leader>ca', '<cmd>Lspsaga code_action<CR>', { desc = 'Code Actions' })
     map({ 'n', 'v' }, '<leader>cr', '<cmd>Lspsaga rename<CR>', { desc = 'Rename' })
-    map('n', 'gr', '<cmd>Lspsaga finder<CR>', { desc = 'Refernece', noremap = true })
     map('n', 'gd', '<cmd>Lspsaga goto_definition<CR>', { desc = 'Goto Definition', noremap = true })
-    map('n', '<leader>dw', '<cmd>Lspsaga show_workspace_diagnostics ++float<CR>', { desc = 'Workspace Diagnostics' })
+
+    -- Trouble
+    map('n', 'gr', "<cmd>Trouble lsp toggle<cr>", { desc = 'Refernece', noremap = true })
+    map('n', '<leader>co', "<cmd>Trouble symbols toggle<cr>", { desc = 'Code Outline' })
+    map('n', '<leader>dw', "<cmd>Trouble diagnostics toggle<cr>", { desc = 'Workspace Diagnostics' })
   end,
 })
 
