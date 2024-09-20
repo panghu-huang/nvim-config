@@ -17,6 +17,7 @@ return {
       { '<leader>v', group = 'Version control' },
       { '<leader>z', group = 'Lazy' },
       { '<leader>s', group = 'Sessions' },
+      { '<leader>S', group = 'Search' },
     },
     icons = {
       rules = false,

@@ -15,6 +15,10 @@ autocmd('LspAttach', {
     map({ 'n', 'v' }, '<leader>cr', '<cmd>Lspsaga rename<CR>', { desc = 'Rename' })
     map('n', 'gd', '<cmd>Lspsaga goto_definition<CR>', { desc = 'Goto Definition', noremap = true })
 
+    -- map('n', '<leader>co', '<cmd>Lspsaga outline<CR>', { desc = 'Code Outline' })
+    -- map('n', 'gr', '<cmd>Lspsaga finder<CR>', { desc = 'Refernece', noremap = true })
+    -- map('n', '<leader>dw', '<cmd>Lspsaga show_workspace_diagnostics ++float<CR>', { desc = 'Workspace Diagnostics' })
+
     -- Trouble
     map('n', 'gr', "<cmd>Trouble lsp toggle<cr>", { desc = 'Refernece', noremap = true })
     map('n', '<leader>co', "<cmd>Trouble symbols toggle<cr>", { desc = 'Code Outline' })

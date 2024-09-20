@@ -1,35 +1,5 @@
 return {
   {
-    'folke/tokyonight.nvim',
-  },
-  {
-    'catppuccin/nvim',
-  },
-  {
-    'rmehri01/onenord.nvim',
-  },
-  {
-    'navarasu/onedark.nvim',
-  },
-  {
-    'projekt0n/github-nvim-theme',
-  },
-  {
-    'sainnhe/everforest',
-  },
-  {
-    'rose-pine/neovim',
-  },
-  {
-    'dracula/vim',
-  },
-  {
-    'nyoom-engineering/oxocarbon.nvim',
-  },
-  {
-    'rebelot/kanagawa.nvim',
-  },
-  {
     'zaldih/themery.nvim',
     keys = {
       {
@@ -182,5 +152,35 @@ return {
         },
       }
     },
-  }
+  },
+  {
+    'folke/tokyonight.nvim',
+  },
+  {
+    'catppuccin/nvim',
+  },
+  {
+    'rmehri01/onenord.nvim',
+  },
+  {
+    'navarasu/onedark.nvim',
+  },
+  {
+    'projekt0n/github-nvim-theme',
+  },
+  {
+    'sainnhe/everforest',
+  },
+  {
+    'rose-pine/neovim',
+  },
+  {
+    'dracula/vim',
+  },
+  {
+    'nyoom-engineering/oxocarbon.nvim',
+  },
+  {
+    'rebelot/kanagawa.nvim',
+  },
 }

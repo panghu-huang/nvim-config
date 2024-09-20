@@ -82,15 +82,18 @@ return {
   -- {
   --   'zbirenbaum/copilot.lua',
   --   cmd = 'Copilot',
-  --   event = 'InsertEnter',
+  --   event = 'VeryLazy',
   --   opts = {
   --     suggestion = {
   --       enabled = true,
   --       auto_trigger = true,
   --       keymap = {
-  --         accept = '<C-j>',
-  --         next = '<C-]>',
-  --         prev = '<C-[>',
+  --         accept = '<A-j>',
+  --         accept_word = '<A-w>',
+  --         accept_line = '<A-l>',
+  --         next = '<A-]>',
+  --         prev = '<A-[>',
+  --         dismiss = '<A-e>'
   --       },
   --     }
   --   },
@@ -98,10 +101,6 @@ return {
   {
     'CopilotC-Nvim/CopilotChat.nvim',
     branch = 'canary',
-    dependencies = {
-      'github/copilot.vim',
-      'nvim-lua/plenary.nvim',
-    },
     keys = {
       {
         '<leader>kc',

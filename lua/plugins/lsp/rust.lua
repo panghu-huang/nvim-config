@@ -61,9 +61,16 @@ return {
           cmp = {
             enabled = true,
           },
+          crates = {
+            enabled = true,
+          }
         },
         popup = {
           autofocus = true,
+          keys = {
+            select = { '<CR>', 'o', 'l' },
+            toggle_feature = { '<CR>', 'o', 'l' },
+          }
         },
         on_attach = function(bufnr)
           local map = function(mode, lhs, rhs, opts)

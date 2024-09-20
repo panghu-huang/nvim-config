@@ -3,12 +3,13 @@ return {
   cmd = 'Telescope',
   config = function()
     local telescope = require 'telescope'
+    local actions = require('telescope.actions')
 
     local opts = {
       defaults = {
-        prompt_prefix = ' 🔍 ',
+        -- prompt_prefix = ' 🔍 ',
         selection_caret = ' ',
-        entry_prefix = ' ',
+        -- entry_prefix = ' ',
         sorting_strategy = 'ascending',
         layout_config = {
           horizontal = {
@@ -24,15 +25,16 @@ return {
           'target/',
           'coverage/',
           'dist/',
-          'build/',
           '*.log',
         },
         mappings = {
           n = {
-            ['q'] = require('telescope.actions').close,
+            ['q'] = actions.close,
           },
           i = {
-            ['<ESC>'] = require('telescope.actions').close,
+            ['<ESC>'] = actions.close,
+            ['<Tab>'] = actions.move_selection_next,
+            ['<S-Tab>'] = actions.move_selection_previous,
           },
         },
         preview = {
