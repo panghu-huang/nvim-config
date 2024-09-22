@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 
-require('tools.lazy-nvim').setup {
+require('tools.setup') {
   plugins = {
     { import = 'plugins.ui' },
     { import = 'plugins.coding' },
@@ -14,6 +14,5 @@ require 'options'
 require 'autocmds'
 
 vim.schedule(function()
-  -- require('ui').setup {}
   require 'mappings'
 end)

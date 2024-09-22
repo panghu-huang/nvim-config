@@ -9,7 +9,7 @@ return {
       defaults = {
         -- prompt_prefix = ' 🔍 ',
         selection_caret = ' ',
-        -- entry_prefix = ' ',
+        entry_prefix = ' ',
         sorting_strategy = 'ascending',
         layout_config = {
           horizontal = {

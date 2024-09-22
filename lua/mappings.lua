@@ -101,6 +101,8 @@ map('n', '<leader>rr', function()
   }
 end, { desc = 'Registers' })
 
-
 -- Code actions
 map('n', '<leader>cf', vim.lsp.buf.format, { desc = 'Format' })
+
+-- Theme Picker
+map('n', '<leader>mt', require('theme-picker').open_theme_picker, { desc = 'Theme Picker' })

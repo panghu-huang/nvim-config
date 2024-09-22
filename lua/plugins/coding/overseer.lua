@@ -15,6 +15,7 @@ return {
       }
     },
     opts = {
+      templates = { "cargo", "desktop" },
       strategy = "toggleterm",
     },
     dependencies = {

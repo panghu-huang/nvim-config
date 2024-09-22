@@ -1,15 +1,15 @@
 return {
   {
-    'zaldih/themery.nvim',
-    keys = {
-      {
-        '<leader>mt',
-        '<cmd>Themery<CR>',
-        desc = 'Toogle Theme switcher',
-      }
-    },
+    'panghu-huang/theme-picker.nvim',
+    dir = '~/workspaces/theme-picker.nvim',
     lazy = false,
     opts = {
+      picker = {
+        layout_config = {
+          width = 0.35,
+          height = 0.5,
+        },
+      },
       themes = {
         {
           name = 'Tokyo Night (Night)',
@@ -38,56 +38,56 @@ return {
         {
           name = 'One Dark (Dark)',
           colorscheme = 'onedark',
-          before = [[
+          before = function()
             vim.g.onedark_config = {
               style = 'dark'
             }
-          ]],
+          end,
         },
         {
           name = 'One Dark (Darker)',
           colorscheme = 'onedark',
-          before = [[
+          before = function()
             vim.g.onedark_config = {
               style = 'darker'
             }
-          ]],
+          end,
         },
         {
           name = 'One Dark (Cool)',
           colorscheme = 'onedark',
-          before = [[
+          before = function()
             vim.g.onedark_config = {
               style = 'cool'
             }
-          ]],
+          end,
         },
         {
           name = 'One Dark (Deep)',
           colorscheme = 'onedark',
-          before = [[
+          before = function()
             vim.g.onedark_config = {
               style = 'deep'
             }
-          ]],
+          end,
         },
         {
           name = 'One Dark (Warm)',
           colorscheme = 'onedark',
-          before = [[
+          before = function()
             vim.g.onedark_config = {
               style = 'warm'
             }
-          ]],
+          end,
         },
         {
           name = 'One Dark (Warmer)',
           colorscheme = 'onedark',
-          before = [[
+          before = function()
             vim.g.onedark_config = {
               style = 'warmer'
             }
-          ]],
+          end,
         },
         {
           name = 'One Nord',
@@ -120,23 +120,23 @@ return {
         {
           name = 'Everforest',
           colorscheme = 'everforest',
-          before = [[
+          before = function()
             vim.g.everforest_background = 'medium'
-          ]],
+          end,
         },
         {
           name = 'Everforest (Hard)',
           colorscheme = 'everforest',
-          before = [[
+          before = function()
             vim.g.everforest_background = 'hard'
-          ]],
+          end,
         },
         {
           name = 'Everforest (Soft)',
           colorscheme = 'everforest',
-          before = [[
+          before = function()
             vim.g.everforest_background = 'soft'
-          ]],
+          end,
         },
         {
           name = 'Oxocarbon',
