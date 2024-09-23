@@ -1,7 +1,7 @@
 return {
   {
     'panghu-huang/theme-picker.nvim',
-    dir = '~/workspaces/theme-picker.nvim',
+    -- dir = '~/workspaces/theme-picker.nvim',
     lazy = false,
     opts = {
       picker = {

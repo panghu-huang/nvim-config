@@ -15,8 +15,11 @@ return {
       }
     },
     opts = {
-      templates = { "cargo", "desktop" },
       strategy = "toggleterm",
+      templates = {
+        "npm-workspace",
+        "cargo-workspace",
+      },
     },
     dependencies = {
       {
@@ -24,7 +27,11 @@ return {
         opts = {
           inupt = { enabled = false },
         }
+      },
+      {
+        'panghu-huang/workspaces.nvim',
+        -- dir = '~/workspaces/workspaces.nvim',
       }
     }
-  }
+  },
 }
