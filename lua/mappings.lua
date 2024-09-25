@@ -106,3 +106,7 @@ map('n', '<leader>cf', vim.lsp.buf.format, { desc = 'Format' })
 
 -- Theme Picker
 map('n', '<leader>mt', require('theme-picker').open_theme_picker, { desc = 'Theme Picker' })
+
+-- Quickfix
+map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous Quickfix' })
+map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })

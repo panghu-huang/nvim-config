@@ -12,6 +12,10 @@ return {
       capabilities = capabilities,
     }
 
+    lspconfig.prismals.setup {
+      capabilities = capabilities,
+    }
+
     lspconfig.lua_ls.setup {
       capabilities = capabilities,
       settings = {
