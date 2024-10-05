@@ -10,6 +10,8 @@ autocmd('LspAttach', {
       vim.keymap.set(mode, lhs, rhs, merged)
     end
 
+    map('n', '<leader>cf', vim.lsp.buf.format, { desc = 'Format' })
+    map('n', '<leader>dq', vim.diagnostic.setqflist, { desc = 'Set Quickfix List' })
     map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { desc = 'Hover Doc' })
     map({ 'n', 'v' }, '<leader>ca', '<cmd>Lspsaga code_action<CR>', { desc = 'Code Actions' })
     map({ 'n', 'v' }, '<leader>cr', '<cmd>Lspsaga rename<CR>', { desc = 'Rename' })
