@@ -102,18 +102,6 @@ return {
           colorscheme = 'github_dark_dimmed',
         },
         {
-          name = 'Rose pine (Moon)',
-          colorscheme = 'rose-pine-moon',
-        },
-        {
-          name = 'Rose pine (Dawn)',
-          colorscheme = 'rose-pine-dawn',
-        },
-        {
-          name = 'Rose pine (Main)',
-          colorscheme = 'rose-pine-main',
-        },
-        {
           name = 'Dracula',
           colorscheme = 'dracula',
         },
@@ -170,9 +158,6 @@ return {
   },
   {
     'sainnhe/everforest',
-  },
-  {
-    'rose-pine/neovim',
   },
   {
     'dracula/vim',

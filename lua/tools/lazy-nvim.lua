@@ -55,7 +55,7 @@ local function setup(opts)
           'zip',
           'zipPlugin',
           'tutor',
-          'rplugin',
+          -- 'rplugin',
           'syntax',
           'synmenu',
           'optwin',
