@@ -75,6 +75,7 @@ map("n", "<leader>fg", file_tools.live_grep_with_glob, { desc = "Find Glob" })
 
 -- Git
 map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'Git Commits' })
+map('n', '<leader>gb', '<cmd>Telescope git_branches<CR>', { desc = 'Git Branches' })
 map('n', '<leader>gp', git_tools.git_commit_and_push, { desc = 'Git Commit and Push' })
 
 -- Diagnostic
