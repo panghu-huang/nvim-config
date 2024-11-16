@@ -39,7 +39,7 @@ map('i', '<A-o>', '<Esc>o', { desc = 'New Line', silent = true })
 map('i', '<A-O>', '<Esc>O', { desc = 'New Line Above', silent = true })
 
 -- Coding
-map('i', 'kk', '<ESC>[mi', { desc = 'Move to previous import block' })
+map('i', 'kk', '<ESC>F{a', { desc = 'Move to previous import block' })
 map('i', '<C-h>', '<ESC>I', { desc = 'Insert at the beginning of the line' })
 map('i', '<C-l>', '<ESC>A', { desc = 'Insert at the end of the line' })
 map('i', '<C-w>', '<ESC>lwi', { desc = 'Insert at next word start' })
@@ -62,6 +62,7 @@ map('n', '<leader>x', function()
 
   buffer_tools.del_buf(buf)
 end, { desc = 'Delete current buffer' })
+map('n', '<leader>bl', '<cmd>Telescope buffers<CR>', { desc = 'List buffers' })
 
 -- Tab
 map('n', '<C-Left>', '<cmd>tabp<CR>', { desc = 'Previous tab' })

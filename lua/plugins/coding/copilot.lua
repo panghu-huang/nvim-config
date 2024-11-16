@@ -103,6 +103,10 @@ return {
           prev = '<A-[>',
           dismiss = '<A-e>'
         },
+      },
+      filetypes = {
+        markdown = true,
+        ["."] = true,
       }
     },
   },
