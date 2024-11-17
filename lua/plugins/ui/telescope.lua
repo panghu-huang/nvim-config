@@ -14,9 +14,9 @@ return {
         layout_config = {
           horizontal = {
             prompt_position = 'top',
-            preview_width = 0.55,
+            preview_width = 0.4,
           },
-          width = 0.87,
+          width = 0.9,
           height = 0.80,
         },
         file_ignore_patterns = {
