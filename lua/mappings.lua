@@ -109,3 +109,12 @@ map('n', '<leader>mt', require('theme-picker').open_theme_picker, { desc = 'Them
 -- Quickfix
 map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous Quickfix' })
 map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })
+
+-- TODO
+map('n', '<leader>t[', function()
+  require('todo-comments').jump_prev()
+end, { desc = 'Previous TODO' })
+
+map('n', '<leader>t]', function()
+  require('todo-comments').jump_next()
+end, { desc = 'Next TODO' })
