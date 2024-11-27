@@ -52,6 +52,7 @@
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "rustaceanvim": { "branch": "master", "commit": "6e742b9fc6a37e46181879f6c32cecfa8cd2cebf" },
   "schemastore.nvim": { "branch": "main", "commit": "291b15c6a03d8f859da8d83f46ed41ae6bb0ea8d" },
+  "smear-cursor.nvim": { "branch": "main", "commit": "3cacbf0fa4ccefd4391ac47b7776444d2af08d46" },
   "tailwind-tools": { "branch": "master", "commit": "3703e162d819a04b128902c508276553dae0dfb8" },
   "telescope.nvim": { "branch": "master", "commit": "85922dde3767e01d42a08e750a773effbffaea3e" },
   "theme-picker.nvim": { "branch": "main", "commit": "c52dcd69ea6c799e61f84d404ae821a845a19d1d" },

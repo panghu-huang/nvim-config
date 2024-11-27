@@ -79,6 +79,18 @@ map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'Git Commits' 
 map('n', '<leader>gb', '<cmd>Telescope git_branches<CR>', { desc = 'Git Branches' })
 map('n', '<leader>gp', git_tools.git_commit_and_push, { desc = 'Git Commit and Push' })
 
+map('n', '[g', function()
+  local gitsigns = require('gitsigns')
+
+  gitsigns.nav_hunk('prev')
+end, { desc = 'Previous Git Hunk' })
+
+map('n', ']g', function()
+  local gitsigns = require('gitsigns')
+
+  gitsigns.nav_hunk('next')
+end, { desc = 'Next Git Hunk' })
+
 -- Diagnostic
 local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
