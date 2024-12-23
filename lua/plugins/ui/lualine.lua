@@ -41,10 +41,10 @@ return {
           },
           lualine_z = {
             'copilot',
-            {
-              'progress',
-              color = { gui = 'bold' },
-            },
+            -- {
+            --   'progress',
+            --   color = { gui = 'bold' },
+            -- },
           },
         },
       }
