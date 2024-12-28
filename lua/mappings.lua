@@ -62,21 +62,21 @@ map('n', '<leader>x', function()
 
   buffer_tools.del_buf(buf)
 end, { desc = 'Delete current buffer' })
-map('n', '<leader>bl', '<cmd>Telescope buffers<CR>', { desc = 'List buffers' })
+map('n', '<leader>bl', '<cmd>FzfLua buffers<CR>', { desc = 'List buffers' })
 
 -- Tab
 map('n', '<C-Left>', '<cmd>tabp<CR>', { desc = 'Previous tab' })
 map('n', '<C-Right>', '<cmd>tabn<CR>', { desc = 'Next tab' })
 
 -- Files
-map('n', '<leader><space>', '<cmd>Telescope find_files<cr>', { desc = 'Find File' })
-map('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', { desc = 'Open Recent File' })
-map('n', '<leader>fw', '<cmd>Telescope live_grep<cr>', { desc = 'Find Word' })
+map('n', '<leader><space>', '<cmd>FzfLua files<cr>', { desc = 'Find File' })
+map('n', '<leader>fo', '<cmd>FzfLua oldfiles<cr>', { desc = 'Open Recent File' })
+map('n', '<leader>fw', '<cmd>FzfLua live_grep<cr>', { desc = 'Find Word' })
 map("n", "<leader>fg", file_tools.live_grep_with_glob, { desc = "Find Glob" })
 
 -- Git
-map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'Git Commits' })
-map('n', '<leader>gb', '<cmd>Telescope git_branches<CR>', { desc = 'Git Branches' })
+map('n', '<leader>gc', '<cmd>FzfLua git_commits<CR>', { desc = 'Git Commits' })
+map('n', '<leader>gb', '<cmd>FzfLua git_branches<CR>', { desc = 'Git Branches' })
 map('n', '<leader>gp', git_tools.git_commit_and_push, { desc = 'Git Commit and Push' })
 
 map('n', '[g', function()
@@ -109,11 +109,7 @@ map('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
 map('n', '<leader>df', vim.diagnostic.open_float, { desc = 'Open Diagnostic Float' })
 
 -- Registers
-map('n', '<leader>rr', function()
-  require('telescope.builtin').registers {
-    layout_config = { width = 0.5 },
-  }
-end, { desc = 'Registers' })
+map('n', '<leader>rr', '<cmd>FzfLua registers<CR>', { desc = 'Registers' })
 
 -- Theme Picker
 map('n', '<leader>mt', require('theme-picker').open_theme_picker, { desc = 'Theme Picker' })

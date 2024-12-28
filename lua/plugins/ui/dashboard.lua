@@ -48,13 +48,13 @@ return {
           {
             key = 'f',
             icon = '󰍲   ',
-            action = 'Telescope find_files',
+            action = 'FzfLua files',
             desc = 'Find file',
           },
           {
             key = 'o',
             icon = '   ',
-            action = 'Telescope oldfiles',
+            action = 'FzfLua oldfiles',
             desc = 'Recent files',
           },
           {
