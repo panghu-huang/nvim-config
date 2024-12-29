@@ -9,6 +9,11 @@ return {
     },
     cmd = 'FzfLua',
     opts = {
+      "default-title",
+      fzf_colors = true,
+      fzf_opts = {
+        ["--no-scrollbar"] = true,
+      },
       winopts = {
         width = 0.9,
         height = 0.8,
@@ -16,13 +21,28 @@ return {
           enabled = true,
         },
         preview = {
-          horizontal = 'right:40%',
+          hscrollchars = { "┃", "" },
+          orizontal = 'right:40%',
         },
       },
       keymap = {
-        builtin = {
-          ['<C-d>'] = 'preview-page-down',
-          ['<C-u>'] = 'preview-page-up'
+        -- builtin = {
+        --   false,
+        --   ['<Tab>'] = 'down',
+        --   ['<S-Tab>'] = 'up',
+        --   ['<C-f>'] = 'preview-page-down',
+        --   ['<C-b>'] = 'preview-page-up',
+        --   ['<C-d>'] = 'preview-half-page-down',
+        --   ['<C-u>'] = 'preview-half-page-up'
+        -- },
+        fzf = {
+          false,
+          ['tab'] = 'down',
+          ['shift-tab'] = 'up',
+          ['ctrl-f'] = 'preview-page-down',
+          ['ctrl-b'] = 'preview-page-up',
+          ['ctrl-d'] = 'preview-half-page-down',
+          ['ctrl-u'] = 'preview-half-page-up'
         }
       },
       files = {
