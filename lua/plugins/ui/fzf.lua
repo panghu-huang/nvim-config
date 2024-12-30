@@ -13,6 +13,7 @@ return {
       fzf_colors = true,
       fzf_opts = {
         ["--no-scrollbar"] = true,
+        ["--cycle"] = true,
       },
       winopts = {
         width = 0.9,

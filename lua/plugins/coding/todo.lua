@@ -4,7 +4,7 @@ return {
   keys = {
     {
       "<leader>td",
-      "<cmd>TodoTelescope<CR>",
+      "<cmd>TodoFzfLua<CR>",
       desc = "Search Todos",
     }
   },
