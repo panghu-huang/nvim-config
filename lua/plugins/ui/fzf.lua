@@ -22,20 +22,19 @@ return {
           enabled = true,
         },
         preview = {
-          hscrollchars = { "┃", "" },
-          orizontal = 'right:40%',
+          horizontal = 'right:40%',
         },
       },
       keymap = {
-        -- builtin = {
-        --   false,
-        --   ['<Tab>'] = 'down',
-        --   ['<S-Tab>'] = 'up',
-        --   ['<C-f>'] = 'preview-page-down',
-        --   ['<C-b>'] = 'preview-page-up',
-        --   ['<C-d>'] = 'preview-half-page-down',
-        --   ['<C-u>'] = 'preview-half-page-up'
-        -- },
+        builtin = {
+          false,
+          ['<Tab>'] = 'down',
+          ['<S-Tab>'] = 'up',
+          ['<C-f>'] = 'preview-page-down',
+          ['<C-b>'] = 'preview-page-up',
+          ['<C-d>'] = 'preview-half-page-down',
+          ['<C-u>'] = 'preview-half-page-up'
+        },
         fzf = {
           false,
           ['tab'] = 'down',
@@ -48,6 +47,10 @@ return {
       },
       files = {
         cwd_prompt = false,
+      },
+      grep = {
+        rg_opts =
+        "-g '!**/resources/apps/**/*.js' -g '!**/fixtures/**/*.js' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e"
       }
     },
   },
