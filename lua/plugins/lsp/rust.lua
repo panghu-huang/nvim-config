@@ -27,6 +27,26 @@ return {
               },
               -- Add clippy lints for Rust.
               checkOnSave = true,
+              procMacro = {
+                enable = true,
+                ignored = {
+                  ['async-trait'] = { 'async_trait' },
+                  ['napi-derive'] = { 'napi' },
+                  ['async-recursion'] = { 'async_recursion' },
+                },
+              },
+              files = {
+                excludeDirs = {
+                  ".direnv",
+                  ".git",
+                  ".github",
+                  "bin",
+                  "node_modules",
+                  "target",
+                  "venv",
+                  ".venv",
+                },
+              },
             },
           },
         },

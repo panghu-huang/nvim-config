@@ -18,6 +18,10 @@ return {
         ["<C-s>"] = "Submit",
         ["<C-c>"] = "Abort",
       },
+      finder = {
+        ["<tab>"] = "Next",
+        ["<s-tab>"] = "Previous",
+      }
     },
     integrations = {
       telescope = true,
