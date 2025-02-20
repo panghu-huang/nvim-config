@@ -23,6 +23,7 @@ return {
         },
         preview = {
           horizontal = 'right:40%',
+          default = 'bat_native',
         },
       },
       keymap = {
