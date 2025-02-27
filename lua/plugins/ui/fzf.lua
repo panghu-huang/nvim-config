@@ -22,7 +22,7 @@ return {
           enabled = true,
         },
         preview = {
-          horizontal = 'right:40%',
+          horizontal = 'right:50%',
           default = 'bat_native',
         },
       },
