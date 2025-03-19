@@ -9,6 +9,11 @@ return {
       typescriptreact = { 'prettier' },
       javascriptreact = { 'prettier' },
     },
+    formatters = {
+      prettier = {
+        command = 'prettier'
+      }
+    },
     format_on_save = {
       timeout_ms = 2500,
       lsp_format = 'fallback',

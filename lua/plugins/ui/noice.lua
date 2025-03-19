@@ -53,6 +53,7 @@ return {
           any = {
             { find = '已写入' },
             { find = 'written' },
+            { find = 'No information available' },
           },
         },
       },
