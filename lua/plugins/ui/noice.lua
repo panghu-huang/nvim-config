@@ -54,6 +54,8 @@ return {
             { find = '已写入' },
             { find = 'written' },
             { find = 'No information available' },
+            -- Ignore deprecated messages from markview.nvim
+            { find = 'is deprecated. Use' },
           },
         },
       },

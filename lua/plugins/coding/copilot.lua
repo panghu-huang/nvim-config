@@ -113,7 +113,7 @@ return {
   },
   {
     'CopilotC-Nvim/CopilotChat.nvim',
-    branch = 'canary',
+    branch = 'main',
     keys = {
       {
         '<leader>kc',
