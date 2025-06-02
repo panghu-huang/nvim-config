@@ -6,7 +6,10 @@ return {
     { '<leader>sr', '<cmd>SessionRestore<CR>', desc = 'Session restore' },
   },
   opts = {
-    auto_session_suppress_dirs = { '~/workspaces', '~/projects', '~/.config' },
+    allowed_dirs = { '~/workspaces', '~/projects', '~/.config' },
+    auto_save = true,
+    auto_create = true,
+    auto_restore = false,
     session_lens = {
       load_on_setup = false,
       theme_conf = { border = true },

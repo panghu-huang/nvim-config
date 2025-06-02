@@ -8,6 +8,8 @@ return {
       typescript = { 'prettier' },
       typescriptreact = { 'prettier' },
       javascriptreact = { 'prettier' },
+      html = { 'prettier' },
+      css = { 'prettier' },
     },
     formatters = {
       prettier = {
