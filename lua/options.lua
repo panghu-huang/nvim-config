@@ -34,6 +34,7 @@ o.showcmdloc = 'statusline'
 o.showcmd = true
 
 opt.termguicolors = true
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
 vim.filetype.add({
   extension = {
@@ -45,5 +46,6 @@ vim.filetype.add({
 local is_windows = vim.fn.has 'win32' ~= 0
 local sep = is_windows and '\\' or '/'
 local delim = is_windows and ';' or ':'
+
 
 vim.env.PATH = table.concat({ vim.fn.stdpath 'data', 'mason', 'bin' }, sep) .. delim .. vim.env.PATH

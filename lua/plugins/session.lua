@@ -1,22 +1,13 @@
 return {
-  'rmagatti/auto-session',
-  cmd = { "SessionRestore", "SessionSearch" },
+  "folke/persistence.nvim",
   keys = {
-    { '<leader>ss', '<cmd>SessionSearch<CR>',  desc = 'Session search' },
-    { '<leader>sr', '<cmd>SessionRestore<CR>', desc = 'Session restore' },
+    { '<leader>ss', '<cmd>lua require("persistence").select()<CR>', desc = 'Session search' },
+    { '<leader>sr', '<cmd>lua require("persistence").load()<CR>',   desc = 'Session restore' },
   },
+  -- this will only start session saving when an actual file was opened
+  event = "BufReadPre",
   opts = {
-    allowed_dirs = { '~/workspaces', '~/projects', '~/.config' },
-    auto_save = true,
-    auto_create = true,
-    auto_restore = false,
-    session_lens = {
-      load_on_setup = false,
-      theme_conf = { border = true },
-      previewer = false,
-      mappings = {
-        delete_session = { "i", "<C-c>" }
-      },
-    },
-  },
+    -- add any custom options here
+    need = 0,
+  }
 }

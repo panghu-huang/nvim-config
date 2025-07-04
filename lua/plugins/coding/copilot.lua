@@ -1,84 +1,4 @@
 return {
-  -- {
-  --   'github/copilot.vim',
-  --   event = 'VeryLazy',
-  --   keys = {
-  --     {
-  --       '<A-j>',
-  --       'copilot#Accept("\\<CR>")',
-  --       desc = 'Copilot Accept',
-  --       expr = true,
-  --       replace_keycodes = false,
-  --       silent = true,
-  --       mode = { 'i' },
-  --     },
-  --     {
-  --       '<A-w>',
-  --       'copilot#AcceptWord()',
-  --       desc = 'Copilot Accept Word',
-  --       expr = true,
-  --       replace_keycodes = false,
-  --       silent = true,
-  --       mode = { 'i' },
-  --     },
-  --     {
-  --       '<A-l>',
-  --       'copilot#AcceptLine()',
-  --       desc = 'Copilot Accept Line',
-  --       expr = true,
-  --       replace_keycodes = false,
-  --       silent = true,
-  --       mode = { 'i' },
-  --     },
-  --     {
-  --       '<A-]>',
-  --       'copilot#Next()',
-  --       desc = 'Copilot Next Suggestion',
-  --       expr = true,
-  --       replace_keycodes = false,
-  --       silent = true,
-  --       mode = { 'i' },
-  --     },
-  --     {
-  --       '<A-[>',
-  --       'copilot#Previous()',
-  --       desc = 'Copilot Previous Suggestion',
-  --       expr = true,
-  --       replace_keycodes = false,
-  --       silent = true,
-  --       mode = { 'i' },
-  --     },
-  --     {
-  --       '<A-space>',
-  --       'copilot#Suggest()',
-  --       desc = 'Copilot Suggest',
-  --       expr = true,
-  --       replace_keycodes = false,
-  --       silent = true,
-  --       mode = { 'i' },
-  --     },
-  --     {
-  --       '<A-e>',
-  --       'copilot#Dismiss()',
-  --       desc = 'Copilot Dismiss',
-  --       expr = true,
-  --       replace_keycodes = false,
-  --       silent = true,
-  --       mode = { 'i' },
-  --     },
-  --   },
-  --   init = function()
-  --     vim.g.copilot_no_tab_map = true
-  --     vim.g.copilot_no_maps = true
-  --     vim.g.copilot_enabled = true
-  --
-  --     local node20 = os.getenv('NODE20_HOME')
-  --
-  --     if node20 ~= nil then
-  --       vim.g.copilot_node_command = node20
-  --     end
-  --   end,
-  -- },
   {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
@@ -92,6 +12,7 @@ return {
       },
     },
     opts = {
+      copilot_node_command = vim.fn.expand("$HOME") .. '/.local/share/fnm/node-versions/v20.15.1/installation/bin/node',
       suggestion = {
         enabled = true,
         auto_trigger = true,

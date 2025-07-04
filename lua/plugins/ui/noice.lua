@@ -56,6 +56,7 @@ return {
             { find = 'No information available' },
             -- Ignore deprecated messages from markview.nvim
             { find = 'is deprecated. Use' },
+            { find = 'Request getCompletions failed with message' },
           },
         },
       },
