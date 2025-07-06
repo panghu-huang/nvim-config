@@ -33,8 +33,9 @@ o.undofile = true
 o.showcmdloc = 'statusline'
 o.showcmd = true
 
+-- o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 opt.termguicolors = true
-opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
 vim.filetype.add({
   extension = {

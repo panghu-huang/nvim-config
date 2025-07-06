@@ -42,7 +42,7 @@ return {
           {
             key = 'r',
             icon = '   ',
-            action = 'lua require("persistence").load()',
+            action = 'SessionRestore',
             desc = 'Restore session              ',
           },
           {
@@ -60,7 +60,7 @@ return {
           {
             key = 's',
             icon = '   ',
-            action = 'lua require("persistence").select()',
+            action = 'SessionSearch',
             desc = 'Search session              ',
           },
           {
