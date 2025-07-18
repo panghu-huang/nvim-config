@@ -32,8 +32,7 @@ o.undofile = true
 -- Show command in statusline
 o.showcmdloc = 'statusline'
 o.showcmd = true
-
--- o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 opt.termguicolors = true
 
