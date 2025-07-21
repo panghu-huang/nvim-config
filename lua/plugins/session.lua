@@ -9,7 +9,6 @@ return {
   opts = {
     auto_restore = false,
     cwd_change_handling = true,
-    lsp_stop_on_restore = true,
     auto_delete_empty_sessions = false,
     continue_restore_on_error = false,
     session_lens = {
