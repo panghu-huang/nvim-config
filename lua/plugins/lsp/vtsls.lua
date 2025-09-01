@@ -28,6 +28,7 @@ return {
           },
           inlayHints = false,
           tsserver = {
+            nodePath = '~/.local/share/fnm/node-versions/v22.17.0/installation/bin/node',
             pluginPaths = { '.' },
           },
         },

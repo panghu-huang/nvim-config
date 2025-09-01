@@ -20,7 +20,7 @@ return {
     { "<leader>an", "<cmd>AvanteChatNew<cr>", desc = "Avante New Chat" },
     { "<leader>ah", "<cmd>AvanteHistory<cr>", desc = "Avante History" },
     { "<leader>as", "<cmd>AvanteStop<cr>",    desc = "Avante Stop" },
-    { "<leader>at", "<cmd>AvanteToggle<cr>",  desc = "Avante Toggle" },
+    { "<leader>at", "<cmd>AvanteToggle<cr>",  desc = "Toggle Avante Sidebar" },
   },
   version = false, -- Never set this value to "*"! Never!
   ---@module 'avante'
