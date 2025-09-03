@@ -29,6 +29,11 @@ o.signcolumn = 'yes'
 
 o.undofile = true
 
+-- Spell check
+o.spell = true
+o.spelllang = 'en'
+o.spelloptions = 'camel'
+
 -- Show command in statusline
 o.showcmdloc = 'statusline'
 o.showcmd = true
