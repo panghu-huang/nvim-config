@@ -13,6 +13,7 @@ require('tools.setup') {
 require 'options'
 require 'autocmds'
 
+vim.lsp.set_log_level('OFF')
 vim.schedule(function()
   require 'mappings'
 end)

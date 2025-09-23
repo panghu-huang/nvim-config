@@ -1,10 +1,10 @@
 return {
   'rmagatti/auto-session',
   event = 'VeryLazy',
-  cmd = { "SessionRestore", "SessionSearch" },
+  cmd = { "AutoSession" },
   keys = {
-    { '<leader>ss', '<cmd>SessionSearch<CR>',  desc = 'Session search' },
-    { '<leader>sr', '<cmd>SessionRestore<CR>', desc = 'Session restore' },
+    { '<leader>ss', '<cmd>AutoSession search<CR>',  desc = 'Session search' },
+    { '<leader>sr', '<cmd>AutoSession restore<CR>', desc = 'Session restore' },
   },
   opts = {
     auto_restore = false,

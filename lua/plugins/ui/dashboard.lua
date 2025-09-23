@@ -42,7 +42,7 @@ return {
           {
             key = 'r',
             icon = '   ',
-            action = 'SessionRestore',
+            action = 'AutoSession restore',
             desc = 'Restore session              ',
           },
           {
@@ -60,7 +60,7 @@ return {
           {
             key = 's',
             icon = '   ',
-            action = 'SessionSearch',
+            action = 'AutoSession search',
             desc = 'Search session              ',
           },
           {
