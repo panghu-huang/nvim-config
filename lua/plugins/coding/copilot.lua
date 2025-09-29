@@ -2,7 +2,7 @@ return {
   {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
-    event = 'VeryLazy',
+    event = 'InsertEnter',
     keys = {
       {
         '<A-p>',
@@ -12,7 +12,7 @@ return {
       },
     },
     opts = {
-      copilot_node_command = vim.fn.expand("$HOME") .. '/.local/share/fnm/node-versions/v20.15.1/installation/bin/node',
+      copilot_node_command = vim.fn.expand("$HOME") .. '/.local/share/fnm/node-versions/v22.20.0/installation/bin/node',
       suggestion = {
         enabled = true,
         auto_trigger = true,

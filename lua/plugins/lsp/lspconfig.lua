@@ -1,29 +1,34 @@
 return {
   'neovim/nvim-lspconfig',
   event = 'UIEnter',
-  -- lspconfig deprecated framework/configs after this commit, should use vim.lsp.config
-  -- but using vim.lsp.config causes frequent lsp server crashes, so temporarily fix the commit
-  commit = '33e318a3f0e729fb7ee82619a21172712b0ea288',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
   },
   config = function()
-    local lspconfig = require 'lspconfig'
     local capabilities = require 'cmp_nvim_lsp'.default_capabilities()
 
-    lspconfig.html.setup {
+    vim.lsp.enable('ts_ls')
+    vim.lsp.config('ts_ls', {
       capabilities = capabilities,
-    }
+    })
 
-    lspconfig.prismals.setup {
+    vim.lsp.enable('html')
+    vim.lsp.config('html', {
       capabilities = capabilities,
-    }
+    })
 
-    lspconfig.eslint.setup {
+    vim.lsp.enable('prismals')
+    vim.lsp.config('prismals', {
       capabilities = capabilities,
-    }
+    })
 
-    lspconfig.lua_ls.setup {
+    vim.lsp.enable('eslint')
+    vim.lsp.config('eslint', {
+      capabilities = capabilities,
+    })
+
+    vim.lsp.enable('lua_ls')
+    vim.lsp.config('lua_ls', {
       capabilities = capabilities,
       settings = {
         Lua = {
@@ -41,6 +46,6 @@ return {
           },
         },
       },
-    }
+    })
   end,
 }

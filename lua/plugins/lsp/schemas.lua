@@ -2,10 +2,10 @@ return {
   'b0o/schemastore.nvim',
   ft = { 'json', 'yaml' },
   config = function()
-    local lspconfig = require 'lspconfig'
     local capabilities = require 'cmp_nvim_lsp'.default_capabilities()
 
-    lspconfig.jsonls.setup {
+    vim.lsp.enable('jsonls')
+    vim.lsp.config('jsonls', {
       capabilities = capabilities,
       settings = {
         json = {
@@ -13,9 +13,10 @@ return {
           validate = { enable = true },
         },
       },
-    }
+    })
 
-    lspconfig.yamlls.setup {
+    vim.lsp.enable('yamlls')
+    vim.lsp.config('yamlls', {
       capabilities = capabilities,
       settings = {
         yaml = {
@@ -26,6 +27,6 @@ return {
           -- },
         },
       },
-    }
+    })
   end,
 }
