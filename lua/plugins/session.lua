@@ -12,16 +12,14 @@ return {
     auto_delete_empty_sessions = false,
     continue_restore_on_error = false,
     session_lens = {
-      session_lens = {
-        mappings = {
-          delete_session = { "i", "<C-c>" }
-        },
-        picker_opts = {
-          border = true,
-          previewer = false
-        },
+      mappings = {
+        delete_session = { "i", "<C-c>" }
+      },
+      picker_opts = {
+        border = true,
         previewer = false
-      }
+      },
+      previewer = false
     },
   },
 }
