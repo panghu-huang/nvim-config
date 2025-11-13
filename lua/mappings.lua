@@ -118,6 +118,18 @@ map('n', '<leader>mt', require('theme-picker').open_theme_picker, { desc = 'Them
 map('n', '[q', '<cmd>cprev<CR>', { desc = 'Previous Quickfix' })
 map('n', ']q', '<cmd>cnext<CR>', { desc = 'Next Quickfix' })
 
+-- Trouble
+map('n', 'gr', "<cmd>Trouble lsp toggle<cr>", { desc = 'Refernece', noremap = true })
+map('n', '<leader>co', "<cmd>Trouble symbols toggle<cr>", { desc = 'Code Outline' })
+map('n', '<leader>dw', "<cmd>Trouble diagnostics toggle<cr>", { desc = 'Workspace Diagnostics' })
+
+map('n', '<leader>cf', vim.lsp.buf.format, { desc = 'Format' })
+map('n', '<leader>dq', vim.diagnostic.setqflist, { desc = 'Set Quickfix List' })
+map('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { desc = 'Hover Doc' })
+map({ 'n', 'v' }, '<leader>ca', '<cmd>Lspsaga code_action<CR>', { desc = 'Code Actions' })
+map({ 'n', 'v' }, '<leader>cr', '<cmd>Lspsaga rename<CR>', { desc = 'Rename' })
+map('n', 'gd', '<cmd>Lspsaga goto_definition<CR>', { desc = 'Goto Definition', noremap = true })
+
 -- TODO
 map('n', '<leader>t[', function()
   require('todo-comments').jump_prev()
