@@ -23,7 +23,7 @@ return {
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch' },
-          lualine_c = {},
+          lualine_c = { 'overseer' },
           lualine_x = { '%S' },
           lualine_y = {
             recording_msg,
