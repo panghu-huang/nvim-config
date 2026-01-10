@@ -20,7 +20,10 @@ local function git_commit_and_push()
     return
   end
 
+  branch_name = vim.trim(branch_name)
+
   local commit_msg = vim.fn.input 'Commit message: '
+
   -- User cancelled the input
   if commit_msg == '' then
     return
@@ -34,14 +37,21 @@ local function git_commit_and_push()
     return
   end
 
-  local _, push_exit_code = run_command('git push origin ' .. branch_name)
+  notify_info('Pushing to branch ' .. branch_name .. '...')
 
-  if push_exit_code ~= 0 then
-    notify_error 'Failed to push changes'
-    return
-  end
-
-  notify_info 'Git commit and push successful'
+  vim.system({ 'git', 'push', 'origin', branch_name }, {
+    text = true,
+  }, function(obj)
+    if obj.code ~= 0 then
+      if obj.stderr and obj.stderr ~= '' then
+        notify_error('Push error: ' .. obj.stderr)
+      else
+        notify_error 'Failed to push changes'
+      end
+    else
+      notify_info 'Git commit and push successful'
+    end
+  end)
 end
 
 local function pull_request_picker()

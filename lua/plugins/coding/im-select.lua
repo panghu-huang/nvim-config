@@ -6,7 +6,6 @@ return {
       default_im_select       = "com.apple.keylayout.US",
 
       -- Restore the default input method state when the following events are triggered
-      -- "VimEnter" and "FocusGained" were removed for causing problems, add it by your needs
       set_default_events      = { "InsertLeave", "CmdlineLeave", "FocusGained" },
 
       -- Restore the previous used input method state when the following events
