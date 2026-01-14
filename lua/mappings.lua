@@ -70,6 +70,8 @@ map('n', '<C-Right>', '<cmd>tabn<CR>', { desc = 'Next tab' })
 
 -- Files
 map('n', '<leader><space>', '<cmd>FzfLua files<cr>', { desc = 'Find File' })
+map('n', '<leader>F', file_tools.find_files_in_app, { desc = 'Find File in App' })
+map('n', '<leader>E', file_tools.find_files_in_current_dir, { desc = 'Find File in Current Dir' })
 map('n', '<leader>fo', '<cmd>FzfLua oldfiles<cr>', { desc = 'Open Recent File' })
 map('n', '<leader>fw', '<cmd>FzfLua live_grep<cr>', { desc = 'Find Word' })
 map("n", "<leader>fg", file_tools.live_grep_with_glob, { desc = "Find Glob" })
