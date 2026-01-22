@@ -67,6 +67,7 @@ map('n', '<leader>bl', '<cmd>FzfLua buffers<CR>', { desc = 'List buffers' })
 -- Tab
 map('n', '<C-Left>', '<cmd>tabp<CR>', { desc = 'Previous tab' })
 map('n', '<C-Right>', '<cmd>tabn<CR>', { desc = 'Next tab' })
+map('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = 'Close current tab' })
 
 -- Files
 map('n', '<leader><space>', '<cmd>FzfLua files<cr>', { desc = 'Find File' })

@@ -13,7 +13,7 @@ return {
     },
     formatters = {
       prettier = {
-        command = 'prettier'
+        command = 'prettier',
       }
     },
     format_on_save = {
