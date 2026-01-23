@@ -1,8 +1,6 @@
 return {
   {
-    -- 'hrsh7th/nvim-cmp',
-    'iguanacucumber/magazine.nvim',
-    name = 'nvim-cmp',
+    'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
       {
