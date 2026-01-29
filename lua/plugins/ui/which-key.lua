@@ -4,7 +4,7 @@ return {
   opts = {
     preset = 'helix',
     spec = {
-      { '<leader>d', group = 'Diagnostics' },
+      { '<leader>d', group = 'Diagnostics & Dev' },
       { '<leader>b', group = 'Buffers' },
       { '<leader>c', group = 'Code',                  mode = { 'n', 'v' } },
       { '<leader>k', group = 'Copilot Chat',          mode = { 'n', 'v' } },

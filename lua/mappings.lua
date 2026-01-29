@@ -1,5 +1,6 @@
 local file_tools = require 'tools.files'
 local git_tools = require 'tools.git'
+local dev_tools = require 'tools.dev'
 local map = vim.keymap.set
 
 map('n', '<C-z>', '<nop>', { desc = 'Disable suspend' })
@@ -141,3 +142,6 @@ end, { desc = 'Previous TODO' })
 map('n', '<leader>t]', function()
   require('todo-comments').jump_next()
 end, { desc = 'Next TODO' })
+
+-- Dev Tools
+map('n', '<leader>dt', dev_tools.show_dev_tools, { desc = 'Development Tools' })
