@@ -5,6 +5,7 @@ return {
     preset = 'helix',
     spec = {
       { '<leader>d', group = 'Diagnostics & Dev' },
+      { '<leader>D', group = 'Debugging' },
       { '<leader>b', group = 'Buffers' },
       { '<leader>c', group = 'Code',                  mode = { 'n', 'v' } },
       { '<leader>k', group = 'Copilot Chat',          mode = { 'n', 'v' } },

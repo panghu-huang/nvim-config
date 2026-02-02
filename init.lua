@@ -7,6 +7,7 @@ require('tools.setup') {
     { import = 'plugins.lsp' },
     { import = 'plugins.treesitter' },
     { import = 'plugins.session' },
+    { import = 'plugins.dap' },
   },
 }
 
