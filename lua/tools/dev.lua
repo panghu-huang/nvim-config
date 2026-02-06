@@ -22,36 +22,14 @@ local function get_dev_scripts()
     table.insert(scripts, {
       name = name,
       path = file,
-      type = "script"
     })
   end
 
   return scripts
 end
 
-local function get_config_options()
-  return {
-    {
-      name = "Config GHE User",
-      command = "config_ghe_user",
-      type = "config"
-    },
-    {
-      name = "Config GitHub User",
-      command = "config_github_user",
-      type = "config"
-    }
-  }
-end
-
 local function execute_script(item)
-  if item.type == "script" then
-    -- Execute shell script
-    vim.cmd("terminal bash " .. vim.fn.shellescape(item.path))
-  elseif item.type == "config" then
-    -- Execute config command
-    vim.cmd("terminal " .. item.command)
-  end
+  vim.cmd("terminal bash " .. vim.fn.shellescape(item.path))
 end
 
 local function show_dev_tools()
@@ -61,22 +39,9 @@ local function show_dev_tools()
   local actions = require("telescope.actions")
   local action_state = require("telescope.actions.state")
 
-  -- Combine scripts and config options
-  local items = {}
-
-  -- Add dev scripts
   local scripts = get_dev_scripts()
-  for _, script in ipairs(scripts) do
-    table.insert(items, script)
-  end
 
-  -- Add config options
-  local config_options = get_config_options()
-  for _, option in ipairs(config_options) do
-    table.insert(items, option)
-  end
-
-  if #items == 0 then
+  if #scripts == 0 then
     vim.notify("No dev tools found", vim.log.levels.INFO)
     return
   end
@@ -84,14 +49,9 @@ local function show_dev_tools()
   pickers.new({}, {
     prompt_title = "Development Tools",
     finder = finders.new_table({
-      results = items,
+      results = scripts,
       entry_maker = function(entry)
-        local display = entry.name
-        if entry.type == "script" then
-          display = "📄 " .. display
-        elseif entry.type == "config" then
-          display = "⚙️  " .. display
-        end
+        local display = "📄 " .. entry.name
 
         return {
           value = entry,
@@ -101,7 +61,7 @@ local function show_dev_tools()
       end,
     }),
     sorter = conf.generic_sorter({}),
-    attach_mappings = function(prompt_bufnr, map)
+    attach_mappings = function(prompt_bufnr)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()

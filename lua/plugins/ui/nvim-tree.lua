@@ -29,7 +29,10 @@ return {
       on_attach = handle_attach,
       filters = {
         dotfiles = false,
-        custom = { '^.git$' },
+        custom = { '^.git$', 'node_modules' },
+      },
+      git = {
+        timeout = 30000,
       },
       disable_netrw = true,
       hijack_cursor = true,
@@ -46,6 +49,11 @@ return {
         highlight_git = true,
         root_folder_label = false,
         special_files = {},
+      },
+      filesystem_watchers = {
+        enable = true,
+        debounce_delay = 1000,
+        ignore_dirs = { 'node_modules', '.git', 'dist', 'build', 'target' }
       },
     },
   },
