@@ -16,7 +16,7 @@ return {
         ["--cycle"] = true,
       },
       winopts = {
-        width = 0.9,
+        width = 0.98,
         height = 0.8,
         treesitter = {
           enabled = true,
